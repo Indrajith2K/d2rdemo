@@ -13,12 +13,14 @@ const DomesticTours = () => {
     { name: 'Goa', path: '/destinations/goa', image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800' },
     { name: 'Hyderabad', path: '/destinations/hyderabad', image: 'https://images.unsplash.com/photo-1513326738677-b964603b136d?w=800' },
     { name: 'Delhi - Agra - Jaipur', path: '/destinations/golden-triangle', image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800' },
-    { name: 'Manali Shimla', path: '/destinations/himachal', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800' },
+    { name: 'Himachal Pradesh', path: '/destinations/himachal', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800' },
     { name: 'Kashmir', path: '/destinations/kashmir', image: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800' },
-    { name: 'Gangtok & Darjeeling', path: '/destinations/northeast', image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800' },
+    { name: 'Northeast', path: '/destinations/northeast', image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800' },
     { name: 'Meghalaya', path: '/destinations/meghalaya', image: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800' },
-    { name: 'Andaman and Nicobar Islands', path: '/destinations/andaman', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800' },
-    { name: 'Lakshadweep', path: '/destinations/lakshadweep', image: 'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=800' }
+    { name: 'Andaman', path: '/destinations/andaman', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800' },
+    { name: 'Lakshadweep', path: '/destinations/lakshadweep', image: 'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=800' },
+    { name: 'Rajasthan', path: '/destinations/rajasthan', image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800' },
+    { name: 'Maharashtra', path: '/destinations/maharashtra', image: 'https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=800&auto=format&fit=crop' }
   ];
 
   return (

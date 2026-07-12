@@ -2,30 +2,46 @@ import React from 'react';
 
 const MiddleBanner = () => {
   return (
-    <section
-      className="relative w-full h-[400px] sm:h-[480px] md:h-[600px] flex items-center justify-start overflow-hidden bg-white"
-    >
-      {/* Background visual image */}
-      <div
-        className="absolute inset-0 bg-cover bg-no-repeat bg-right md:bg-center z-0"
-        style={{
-          backgroundImage: 'url("https://images.squarespace-cdn.com/content/v1/6589bdd22569ba630cb2cba1/1747155304609-9F521RLP1YEAEPPEMQGD/image-asset.jpeg")',
-        }}
-      />
-
-      {/* Subtle dark gradient on the left to ensure text readability without ruining image quality */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent w-full z-0" />
-
-      {/* Content overlay */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
-        <div className="max-w-xl bg-black/10 backdrop-blur-sm p-8 sm:p-10 rounded-3xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
-          <h2 className="font-display text-4xl sm:text-5xl md:text-[3.5rem] font-bold text-white mb-6 leading-tight drop-shadow-lg">
-            Write Your Own Adventure
-          </h2>
-
-          <p className="font-sans text-sm sm:text-base md:text-lg text-slate-100 leading-relaxed font-light drop-shadow-sm">
-            You are the author of your journey; we are simply the scribes. At D2R Holidays, a premier <strong className="font-bold text-amber-400">travel agency in Coimbatore</strong>, we curate deeply personal travel narratives. Share your vision, and our experts will compose a flawless itinerary. From secluded boutique havens to culturally immersive encounters, we handle the logistics so you can live the story.
-          </p>
+    <section className="px-6 pb-24 max-w-7xl mx-auto" data-purpose="custom-adventure">
+      <div className="relative h-[500px] rounded-[40px] overflow-hidden group">
+        {/* High-impact vibrant travel background */}
+        <img
+          alt="Vibrant Colorful Travel Background"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpiyJ5V0ktw67uMXqtlUiPQV6xj5pPeJQ7Oh6RS7uH-lL3emh1v8KdOi361PHC-OoWDDDIHXGfM-nt87MNFhR1VFZ5Z1hZ8-hrYSrmXDIv1oZIoTu_8wGcqhnZ8Dl42UMzK215VLl44N2S-dXAAbR_4jtH-Zv17wvfLPaLzoLnEPs4Jd9grcraELHt3v7cskz3NrHM_K5_WYgRocc6yLF1RVA0usFKb-cmjaNncCuaReQDv9dEEQ_VIMkSUdk9V2FJLZt7TGf7af3x"
+        />
+        {/* Gradient overlay for premium feel and text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent flex items-center">
+          <div className="px-12 md:px-20 max-w-3xl text-left">
+            <span className="text-[#D4AF37] font-medium tracking-[0.2em] uppercase text-sm mb-6 block">
+              Limitless Possibilities
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl text-white mb-5 leading-tight font-bold">
+              Write Your Own Adventure
+            </h2>
+            <p className="font-sans text-white/70 text-base font-light mb-8 max-w-md">
+              Don't see exactly what you're looking for? Let's collaborate to build a bespoke itinerary that reflects your unique spirit of discovery.
+            </p>
+            <a
+              className="inline-flex items-center px-8 py-4 bg-white text-[#1a1a1a] font-medium rounded-full hover:bg-[#D4AF37] hover:text-white transition-all duration-300 shadow-xl group/btn"
+              href="/plan-custom-trip"
+            >
+              Start Customizing
+              <svg
+                className="ml-2 w-5 h-5 transition-transform group-hover/btn:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>

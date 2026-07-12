@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const StatsBanner = () => {
   return (
-    <section className="py-24 bg-[#faf9f6] text-slate-800 relative overflow-hidden">
+    <section className="py-24 bg-white text-slate-800 relative overflow-hidden">
       {/* Subtle light ambient glows */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       <div className="absolute -top-40 -right-40 w-96 h-96 bg-amber-100/50 rounded-full blur-[100px] pointer-events-none" />

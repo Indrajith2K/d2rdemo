@@ -14,8 +14,8 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
-    { name: 'Blogs', href: '/blogs' },
-    { name: 'Live Exchange', href: '/live-exchange' }
+    // { name: 'Blogs', href: '/blogs' },
+    // { name: 'Live Exchange', href: '/live-exchange' }
   ];
 
   const domesticItems = [
@@ -25,12 +25,14 @@ const Navbar = () => {
     { name: 'Goa', href: '/destinations/goa' },
     { name: 'Hyderabad', href: '/destinations/hyderabad' },
     { name: 'Delhi - Agra - Jaipur', href: '/destinations/golden-triangle' },
-    { name: 'Manali Shimla', href: '/destinations/himachal' },
+    { name: 'Himachal Pradesh', href: '/destinations/himachal' },
     { name: 'Kashmir', href: '/destinations/kashmir' },
-    { name: 'Gangtok & Darjeeling', href: '/destinations/northeast' },
+    { name: 'Northeast', href: '/destinations/northeast' },
     { name: 'Meghalaya', href: '/destinations/meghalaya' },
-    { name: 'Andaman and Nicobar Islands', href: '/destinations/andaman' },
-    { name: 'Lakshadweep', href: '/destinations/lakshadweep' }
+    { name: 'Andaman', href: '/destinations/andaman' },
+    { name: 'Lakshadweep', href: '/destinations/lakshadweep' },
+    { name: 'Rajasthan', href: '/destinations/rajasthan' },
+    { name: 'Maharashtra', href: '/destinations/maharashtra' }
   ];
 
   const internationalItems = [
@@ -38,8 +40,16 @@ const Navbar = () => {
     { name: 'Malaysia', href: '/destinations/malaysia' },
     { name: 'Singapore', href: '/destinations/singapore' },
     { name: 'Bali', href: '/destinations/bali' },
-    { name: 'United Arab Emirates (Dubai)', href: '/destinations/dubai' },
-    { name: 'Sri Lanka', href: '/destinations/srilanka' }
+    { name: 'Dubai', href: '/destinations/dubai' },
+    { name: 'Sri Lanka', href: '/destinations/srilanka' },
+    { name: 'Vietnam', href: '/destinations/vietnam' },
+    { name: 'Cambodia', href: '/destinations/cambodia' },
+    { name: 'Azerbaijan', href: '/destinations/azerbaijan' },
+    { name: 'Maldives', href: '/destinations/maldives' },
+    { name: 'Seychelles', href: '/destinations/seychelles' },
+    { name: 'Japan', href: '/destinations/japan' },
+    { name: 'Mauritius', href: '/destinations/mauritius' },
+    { name: 'Kazakhstan', href: '/destinations/kazakhstan' }
   ];
 
   const packageItems = [
@@ -178,14 +188,13 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Packages Dropdown */}
+          {/* Packages Dropdown
           <div className="relative group">
             <button className="text-blue-955 text-blue-950 hover:text-blue-600 font-bold text-[14.5px] px-3 py-2 flex items-center gap-0.5 transition-colors font-sans whitespace-nowrap">
               <span>Packages</span>
               <ChevronDown className="h-4 w-4 group-hover:rotate-180 transition-transform duration-300 text-blue-950/70" />
             </button>
             
-            {/* Light Dropdown Menu */}
             <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 bg-white border border-slate-150 shadow-[0_15px_40px_rgba(15,23,42,0.1)] rounded-[20px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2.5">
               {packageItems.map(item => (
                 <RouterLink 
@@ -198,6 +207,7 @@ const Navbar = () => {
               ))}
             </div>
           </div>
+          */}
 
           <RouterLink 
             to="/contact" 
@@ -331,7 +341,7 @@ const Navbar = () => {
               )}
             </div>
 
-            {/* Mobile Dropdown Dropdowns: Packages */}
+            {/* Mobile Dropdown Dropdowns: Packages
             <div className="border-t border-slate-100 my-2 pt-2">
               <button 
                 onClick={() => setMobilePackagesOpen(!mobilePackagesOpen)} 
@@ -350,6 +360,7 @@ const Navbar = () => {
                 </div>
               )}
             </div>
+            */}
 
             <RouterLink 
               to="/contact" 

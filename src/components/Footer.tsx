@@ -95,7 +95,7 @@ const Footer = () => {
             </p>
             <div className="mt-4 md:mt-0">
               <p className="text-sm text-gray-300">
-                Made with ❤️ by <a href="https://skittex.in" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300 transition-colors duration-200 font-medium">skittex</a>
+                Made with ❤️ by <a href="https://skittex.in" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300 transition-colors duration-200 font-medium">Skittex Studio</a>
               </p>
             </div>
           </div>

@@ -23,8 +23,6 @@ const Malaysia = () => {
           gradientTo="to-blue-800"
         />
 
-        <WhyChooseSection />
-
         <PackagesGrid
           packages={packages}
           loading={loading}
@@ -38,6 +36,8 @@ const Malaysia = () => {
           buttonGradient="from-red-600 to-yellow-600 hover:from-red-700 hover:to-yellow-700"
           emptyMessage="Contact us for customized Malaysia tour packages"
         />
+
+        <WhyChooseSection />
       </div>
       <Footer />
       <FloatingContact />

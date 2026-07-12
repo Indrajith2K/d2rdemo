@@ -23,10 +23,6 @@ const Kerala = () => {
           gradientTo="to-emerald-900"
         />
 
-
-
-        <WhyChooseSection />
-
         <PackagesGrid
           packages={packages}
           loading={loading}
@@ -40,6 +36,8 @@ const Kerala = () => {
           buttonGradient="from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700"
           emptyMessage="Contact us for customized Kerala tour packages"
         />
+
+        <WhyChooseSection />
       </div>
       <Footer />
       <FloatingContact />

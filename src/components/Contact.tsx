@@ -182,7 +182,7 @@ const Contact = () => {
       {/* ============================================================================
           BOOK NOW FORM CONTAINER
           ============================================================================ */}
-      <section className="py-20 bg-gray-50 relative z-20">
+      <section className="py-20 bg-white relative z-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           {/* Progress Bar */}
           <div className="mb-12">

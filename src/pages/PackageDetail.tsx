@@ -147,15 +147,6 @@ const PackageDetail = () => {
             
             {/* Left Content Column */}
             <div className="lg:col-span-2 space-y-12">
-              
-              {/* Description */}
-              {pkg.description && (
-                <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
-                  <h2 className="text-2xl font-bold text-slate-800 mb-4 font-playfair">About this Tour</h2>
-                  <p className="text-slate-600 text-lg leading-relaxed">{pkg.description}</p>
-                </div>
-              )}
-
               {/* Quick Facts */}
               {pkg.quick_facts && pkg.quick_facts.length > 0 && (
                 <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
@@ -225,49 +216,79 @@ const PackageDetail = () => {
                 </div>
               )}
 
+              {/* Trip Speciality */}
+              {/* Description */}
+              {pkg.description && (
+                <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
+                  <h2 className="text-2xl font-bold text-slate-800 mb-4 font-playfair">About this Tour</h2>
+                  <p className="text-slate-600 text-lg leading-relaxed">{pkg.description}</p>
+                </div>
+              )}
+
             </div>
 
             {/* Right Sticky Column (Pricing & CTA) */}
             <div className="lg:col-span-1">
-              <div className="sticky top-32 bg-white rounded-3xl shadow-xl border border-slate-100 p-8">
-                <div className="text-sm text-slate-500 font-semibold uppercase tracking-wider mb-2">Starting from</div>
-                <div className="flex items-end gap-2 mb-6 pb-6 border-b border-slate-100">
-                  <span className="text-4xl lg:text-5xl font-black text-blue-600 font-playfair">{formatPrice(pkg.price_per_person)}</span>
-                  <span className="text-slate-500 font-medium pb-1">/ person</span>
-                </div>
-
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center justify-between text-slate-700">
-                    <span className="font-medium flex items-center gap-2"><Clock className="h-4 w-4 text-slate-400" /> Duration</span>
-                    <span className="font-bold">{formatDuration(pkg.duration_days, pkg.duration_nights)}</span>
+              <div className="sticky top-32 space-y-6">
+                <div className="bg-white rounded-3xl shadow-xl border border-slate-100 p-8">
+                  <div className="text-sm text-slate-500 font-semibold uppercase tracking-wider mb-2">Starting from</div>
+                  <div className="flex items-end gap-2 mb-6 pb-6 border-b border-slate-100">
+                    <span className="text-4xl lg:text-5xl font-black text-blue-600 font-playfair">{formatPrice(pkg.price_per_person)}</span>
+                    <span className="text-slate-500 font-medium pb-1">/ person</span>
                   </div>
-                  <div className="flex items-center justify-between text-slate-700">
-                    <span className="font-medium flex items-center gap-2"><MapPin className="h-4 w-4 text-slate-400" /> Location</span>
-                    <span className="font-bold">{pkg.location}</span>
-                  </div>
-                </div>
 
-                <div className="space-y-4">
-                  <a 
-                    href="https://whatsform.com/4rhIjb" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white py-4 px-6 rounded-2xl font-bold text-lg hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-                  >
-                    <MessageCircle className="h-5 w-5" />
-                    Book via WhatsApp
-                  </a>
+                  <div className="space-y-4 mb-8">
+                    <div className="flex items-center justify-between text-slate-700">
+                      <span className="font-medium flex items-center gap-2"><Clock className="h-4 w-4 text-slate-400" /> Duration</span>
+                      <span className="font-bold">{formatDuration(pkg.duration_days, pkg.duration_nights)}</span>
+                    </div>
+                    <div className="flex items-center justify-between text-slate-700">
+                      <span className="font-medium flex items-center gap-2"><MapPin className="h-4 w-4 text-slate-400" /> Location</span>
+                      <span className="font-bold">{pkg.location}</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <a 
+                      href="https://whatsform.com/4rhIjb" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white py-4 px-6 rounded-2xl font-bold text-lg hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                    >
+                      <MessageCircle className="h-5 w-5" />
+                      Book via WhatsApp
+                    </a>
+                    
+                    <a 
+                      href="tel:8300082588" 
+                      className="w-full flex items-center justify-center gap-2 bg-slate-100 text-slate-800 hover:bg-slate-200 py-4 px-6 rounded-2xl font-bold text-lg transition-colors"
+                    >
+                      <Phone className="h-5 w-5" />
+                      Call to Book
+                    </a>
+                  </div>
                   
-                  <a 
-                    href="tel:8300082588" 
-                    className="w-full flex items-center justify-center gap-2 bg-slate-100 text-slate-800 hover:bg-slate-200 py-4 px-6 rounded-2xl font-bold text-lg transition-colors"
-                  >
-                    <Phone className="h-5 w-5" />
-                    Call to Book
-                  </a>
+                  <p className="text-center text-xs text-slate-400 mt-6 font-medium">No hidden fees • Instant confirmation</p>
                 </div>
-                
-                <p className="text-center text-xs text-slate-400 mt-6 font-medium">No hidden fees • Instant confirmation</p>
+
+                {pkg.trip_speciality && (
+                  <div className="bg-white rounded-3xl shadow-xl border border-slate-100 p-6">
+                    <h3 className="text-lg font-bold text-slate-800 mb-4 font-playfair flex items-center gap-2">
+                      <span className="text-yellow-500 text-xl">🌟</span> Trip Speciality
+                    </h3>
+                    <div className="space-y-2.5">
+                      {pkg.trip_speciality.split('|').map((item, index) => {
+                        const trimmed = item.trim();
+                        if (!trimmed) return null;
+                        return (
+                          <div key={index} className="flex items-start gap-3 bg-slate-50/80 p-3 rounded-xl border border-slate-100/50 hover:bg-slate-100/50 transition-colors">
+                            <span className="text-slate-700 text-sm font-medium leading-relaxed">{trimmed}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 

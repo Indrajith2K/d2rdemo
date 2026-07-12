@@ -7,34 +7,34 @@ import WhyChooseSection from '../../components/WhyChooseSection';
 import PackagesGrid from '../../components/PackagesGrid';
 import { usePackages } from '../../hooks/usePackages';
 
-const Dubai = () => {
-  const { packages, loading, error } = usePackages({ stateOrCountry: 'Dubai' });
+const Cambodia = () => {
+  const { packages, loading, error } = usePackages({ stateOrCountry: 'Cambodia' });
 
   return (
     <div className="min-h-screen">
       <Navbar />
       <div className="pt-20 md:pt-24">
         <DestinationHero
-          title="Dubai"
-          subtitle="City of Gold"
-          description="Desert safari, Burj Khalifa, luxury shopping, and world-class entertainment"
-          gradientFrom="from-amber-800"
-          gradientVia="via-orange-700"
-          gradientTo="to-yellow-800"
+          title="Cambodia"
+          subtitle="Kingdom of Wonder"
+          description="Explore the legendary Angkor Wat temples, rich historical legacy, and scenic landscapes of Cambodia"
+          gradientFrom="from-yellow-900"
+          gradientVia="via-amber-800"
+          gradientTo="to-yellow-950"
         />
 
         <PackagesGrid
           packages={packages}
           loading={loading}
           error={error}
-          title="Dubai"
+          title="Cambodia Tour"
           titleAccent="Packages"
           accentColorClass="text-amber-600"
-          subtitle="Experience desert safari, Burj Khalifa, Miracle Garden, and Ferrari World"
+          subtitle="Discover ancient temple ruins, royal palaces, and rich cultural history in Cambodia"
           accentColor="text-amber-600"
           hoverColor="group-hover:text-amber-600"
-          buttonGradient="from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700"
-          emptyMessage="Contact us for customized Dubai tour packages"
+          buttonGradient="from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700"
+          emptyMessage="Contact us for customized Cambodia tour packages"
         />
 
         <WhyChooseSection />
@@ -45,4 +45,4 @@ const Dubai = () => {
   );
 };
 
-export default Dubai;
+export default Cambodia;

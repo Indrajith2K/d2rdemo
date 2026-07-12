@@ -54,6 +54,16 @@ import Northeast from "./pages/destinations/Northeast";
 import Meghalaya from "./pages/destinations/Meghalaya";
 import Andaman from "./pages/destinations/Andaman";
 import Lakshadweep from "./pages/destinations/Lakshadweep";
+import Rajasthan from "./pages/destinations/Rajasthan";
+import Maharashtra from "./pages/destinations/Maharashtra";
+import Vietnam from "./pages/destinations/Vietnam";
+import Cambodia from "./pages/destinations/Cambodia";
+import Azerbaijan from "./pages/destinations/Azerbaijan";
+import Maldives from "./pages/destinations/Maldives";
+import Seychelles from "./pages/destinations/Seychelles";
+import Japan from "./pages/destinations/Japan";
+import Mauritius from "./pages/destinations/Mauritius";
+import Kazakhstan from "./pages/destinations/Kazakhstan";
 
 const queryClient = new QueryClient();
 
@@ -89,7 +99,7 @@ const App = () => {
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <CurrencyPopup />
+        {/* <CurrencyPopup /> */}
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
@@ -107,12 +117,22 @@ const App = () => {
           <Route path="/destinations/meghalaya" element={<Meghalaya />} />
           <Route path="/destinations/andaman" element={<Andaman />} />
           <Route path="/destinations/lakshadweep" element={<Lakshadweep />} />
+          <Route path="/destinations/rajasthan" element={<Rajasthan />} />
+          <Route path="/destinations/maharashtra" element={<Maharashtra />} />
           <Route path="/destinations/thailand" element={<Thailand />} />
           <Route path="/destinations/malaysia" element={<Malaysia />} />
           <Route path="/destinations/singapore" element={<Singapore />} />
           <Route path="/destinations/bali" element={<Bali />} />
           <Route path="/destinations/dubai" element={<Dubai />} />
           <Route path="/destinations/srilanka" element={<SriLanka />} />
+          <Route path="/destinations/vietnam" element={<Vietnam />} />
+          <Route path="/destinations/cambodia" element={<Cambodia />} />
+          <Route path="/destinations/azerbaijan" element={<Azerbaijan />} />
+          <Route path="/destinations/maldives" element={<Maldives />} />
+          <Route path="/destinations/seychelles" element={<Seychelles />} />
+          <Route path="/destinations/japan" element={<Japan />} />
+          <Route path="/destinations/mauritius" element={<Mauritius />} />
+          <Route path="/destinations/kazakhstan" element={<Kazakhstan />} />
           <Route path="/packages/honeymoon" element={<HoneymoonPackages />} />
           <Route path="/packages/domestic" element={<DomesticTours />} />
           <Route path="/domestic-tours" element={<DomesticTours />} />

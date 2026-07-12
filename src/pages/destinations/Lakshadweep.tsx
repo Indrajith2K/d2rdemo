@@ -23,8 +23,6 @@ const Lakshadweep = () => {
           gradientTo="to-blue-900"
         />
 
-        <WhyChooseSection />
-
         <PackagesGrid
           packages={packages}
           loading={loading}
@@ -38,6 +36,8 @@ const Lakshadweep = () => {
           buttonGradient="from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700"
           emptyMessage="Contact us for customized Lakshadweep tour packages"
         />
+
+        <WhyChooseSection />
       </div>
       <Footer />
       <FloatingContact />

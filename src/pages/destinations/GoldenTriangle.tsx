@@ -23,8 +23,6 @@ const GoldenTriangle = () => {
           gradientTo="to-orange-900"
         />
 
-        <WhyChooseSection />
-
         <PackagesGrid
           packages={packages}
           loading={loading}
@@ -38,6 +36,8 @@ const GoldenTriangle = () => {
           buttonGradient="from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700"
           emptyMessage="Contact us for customized Golden Triangle tour packages"
         />
+
+        <WhyChooseSection />
       </div>
       <Footer />
       <FloatingContact />

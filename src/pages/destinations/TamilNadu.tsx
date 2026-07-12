@@ -23,8 +23,6 @@ const TamilNadu = () => {
           gradientTo="to-pink-900"
         />
 
-        <WhyChooseSection />
-
         <PackagesGrid
           packages={packages}
           loading={loading}
@@ -38,6 +36,8 @@ const TamilNadu = () => {
           buttonGradient="from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700"
           emptyMessage="Contact us for customized Tamil Nadu tour packages"
         />
+
+        <WhyChooseSection />
       </div>
       <Footer />
       <FloatingContact />

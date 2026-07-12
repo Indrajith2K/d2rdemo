@@ -23,8 +23,6 @@ const Goa = () => {
           gradientTo="to-amber-900"
         />
 
-        <WhyChooseSection />
-
         <PackagesGrid
           packages={packages}
           loading={loading}
@@ -38,6 +36,8 @@ const Goa = () => {
           buttonGradient="from-orange-600 to-yellow-600 hover:from-orange-700 hover:to-yellow-700"
           emptyMessage="Contact us for customized Goa tour packages"
         />
+
+        <WhyChooseSection />
       </div>
       <Footer />
       <FloatingContact />

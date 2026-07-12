@@ -7,73 +7,82 @@ interface Review {
   role: string;
   rating: number;
   text: string;
-  avatar: string;
+  avatarColor: string;
+  initials: string;
 }
 
 const defaultReviews: Review[] = [
   {
     id: 1,
-    name: "Sowmya Subramanian",
-    role: "CHENNAI CORPORATE TRAVELER",
+    name: "Mathi Sankar",
+    role: "GOOGLE REVIEW • 6 MONTHS AGO",
     rating: 5,
-    text: "Highly recommend their Singapore paradise package. The D2R team handled our passport verification and visa documentation instantly. Absolute stressfree travel planner!",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+    text: "This journey was one of the best experiences we've had, and the adventure was completely new and exciting for all our friends. The guide was warm, friendly, and very supportive. The trip was absolutely worth the cost. Choose Best Travellers D2R Private Limited for a fantastic travel experience.",
+    avatarColor: "#4285F4",
+    initials: "MS"
   },
   {
     id: 2,
-    name: "Karthik & Deepika Rajan",
-    role: "MADURAI COUPLE",
+    name: "Lakkiya Selvakumar",
+    role: "GOOGLE REVIEW • 6 MONTHS AGO",
     rating: 5,
-    text: "Our Kerala honeymoon houseboat stay in Alleppey backwaters was absolutely magical! Custom candlelight dinner, private resort, flower decor - D2R made our trip unforgettable.",
-    avatar: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=100&h=100&fit=crop"
+    text: "Great experience, well planned, frendly and supportive, truly made the journey enjoy a well",
+    avatarColor: "#34A853",
+    initials: "LS"
   },
   {
     id: 3,
-    name: "Karthikeyan Ramasamy",
-    role: "COIMBATORE EXPLORER",
+    name: "Vaishali Balaji",
+    role: "GOOGLE REVIEW • 2 MONTHS AGO",
     rating: 5,
-    text: "Munnar to Vagamon family hills package was perfectly organized by Dare2Roam! Driver was very professional and hotels were superb. Ops team assisted 24/7. High quality service!",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+    text: "Thanks to D2R Holidays for giving us a wonderful experience. Truly a great trip, we have covered so many places and activities within 3 days.",
+    avatarColor: "#EA4335",
+    initials: "VB"
   },
   {
     id: 4,
-    name: "Anitha Murugesan",
-    role: "SALEM FAMILY EXPLORER",
+    name: "Danisha",
+    role: "GOOGLE REVIEW • 2 MONTHS AGO",
     rating: 5,
-    text: "Thailand family tour was romba nalla irundhuchu. Pattaya beaches and Bangkok shopping were extremely good. Next year Kashmir snow package kandippa bookings pannuvom. Thanks D2R!",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop"
+    text: "The trip we had was so good and the guide (Bala Anna) we had was such a friendly one who matched with our vibe and had lots of fun there. Overall food, resort, adventures and travels all are worth the price!!",
+    avatarColor: "#FBBC05",
+    initials: "D"
   },
   {
     id: 5,
-    name: "Arun Selvam",
-    role: "ERODE ADVENTURE SEEKER",
+    name: "Divya Prabha B.B",
+    role: "GOOGLE REVIEW • 6 MONTHS AGO",
     rating: 5,
-    text: "Andaman islands trip was excellent. Scuba diving, island hopping, luxury beach resort bookings - everything was top class. Best rates provided by operations team.",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+    text: "The bus arrangements, crackers, and cake cutting were very good. The guidelines provided were also clear and helpful. The adventure park and food were nice. We also had access to the swimming pool, and there was a separate property arranged for us. Mr. Bala helped us a lot throughout the trip. Overall, it was a very good experience.",
+    avatarColor: "#9C27B0",
+    initials: "DP"
   },
   {
     id: 6,
-    name: "Meenakshi Sundaram",
-    role: "TRICHY COUPLES GETAWAY",
+    name: "S L T",
+    role: "GOOGLE REVIEW • 6 MONTHS AGO",
     rating: 5,
-    text: "Bali trip was like a dream come true! Our private pool villa in Ubud was beautiful. Sunrise trek and Balinese spa were perfectly scheduled. D2R ops desk support was top-tier.",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop"
+    text: "Our trip was well organised by D2R Holidays, they provided a proper itinerary and were open to changes based on our constraints. They took care of almost everything — accommodation and travel was comfortable. Food exceeded our expectations. Overall this was a really nice experience.",
+    avatarColor: "#00BCD4",
+    initials: "SLT"
   },
   {
     id: 7,
-    name: "Praveen Kumar & Priya",
-    role: "CHENNAI NEWLYWEDS",
-    rating: 4,
-    text: "Ooty and Kodaikanal scenic package was very budget friendly with premium luxury stays. Cab driver was very polite and guided us nicely. Excellent travel consultants!",
-    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop"
+    name: "Mithra Kumar",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "It was really a good experience. A well planned trip with good food.",
+    avatarColor: "#FF5722",
+    initials: "MK"
   },
   {
     id: 8,
-    name: "Lakshmi Narayanan",
-    role: "TIRUNELVELI FAMILY GROUP",
+    name: "Indrajith K.U",
+    role: "GOOGLE REVIEW",
     rating: 5,
-    text: "Dubai family vacation was beyond expectations. Desert safari, Burj Khalifa levels, and Global Village - everything was well organized. Very fast visa processing done in 3 days.",
-    avatar: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=100&h=100&fit=crop"
+    text: "They assisted me properly with my trip. Every thing was properly pre-planned and executed properly. Worth the wait for my trip.",
+    avatarColor: "#607D8B",
+    initials: "IK"
   }
 ];
 
@@ -81,44 +90,11 @@ const Testimonials = () => {
   const [reviews, setReviews] = useState<Review[]>(defaultReviews);
   const googleReviewUrl = "https://search.google.com/local/writereview?placeid=ChIJKzhygqQzqTsRjO4w1pXkGyo";
 
-  useEffect(() => {
-    fetch('https://data.accentapi.com/feed/25689581.json')
-      .then(res => res.json())
-      .then(data => {
-        if (data && data.reviews && data.reviews.length > 0) {
-          const liveReviews = data.reviews.map((r: any) => {
-            const dateObj = new Date(r.review_date_time);
-            const dateStr = dateObj.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-            
-            let reviewText = r.review_text;
-            if (!reviewText || reviewText.trim() === '') {
-              reviewText = `Rated ${r.rating} stars on Google.`;
-            }
-            
-            return {
-              id: r.id,
-              name: r.reviewer_name,
-              role: `GOOGLE REVIEW • ${dateStr.toUpperCase()}`,
-              rating: r.rating,
-              text: reviewText,
-              avatar: r.reviewer_photo_link || "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
-            };
-          });
-
-          if (liveReviews.length > 0) {
-            setReviews(prevReviews => {
-              const liveNames = new Set(liveReviews.map((lr: any) => lr.name.toLowerCase()));
-              const filteredDefaults = defaultReviews.filter(dr => !liveNames.has(dr.name.toLowerCase()));
-              return [...liveReviews, ...filteredDefaults];
-            });
-          }
-        }
-      })
-      .catch(err => console.error("Error fetching live reviews:", err));
-  }, []);
+  // Removed the live API fetch to ensure ONLY the hardcoded authentic reviews are shown
+  // without being mixed with or overwritten by the external feed.
 
   return (
-    <section className="py-24 bg-[#f8f9ff] text-slate-800 relative overflow-hidden">
+    <section className="py-24 bg-white text-slate-800 relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-amber-200/40 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-200/40 rounded-full blur-[100px] pointer-events-none" />
@@ -173,28 +149,28 @@ const Testimonials = () => {
             </div>
           </div>
 
-          {/* Right Column (Span 7) - SCROLLING TESTIMONIALS */}
-          <div className="lg:col-span-7 flex flex-col relative h-[620px] overflow-hidden rounded-[2rem] bg-white border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
+          {/* Right Column (Span 7) - SCROLLING TESTIMONIALS: shows 3 at a time, loops all reviews */}
+          <div className="lg:col-span-7 flex flex-col relative overflow-hidden rounded-[2rem] bg-white border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)]" style={{ height: '660px' }}>
             
             {/* Top Fade Mask */}
-            <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white via-white/90 to-transparent pointer-events-none z-10" />
+            <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white to-transparent pointer-events-none z-10" />
 
-            {/* Infinite Marquee Wrapper */}
-            <div className="absolute inset-0 flex justify-center w-full px-2 md:px-6">
-              <div className="flex flex-col gap-6 animate-slide-down-continuous hover:[animation-play-state:paused] py-16 w-full">
-                {/* First Loop */}
+            {/* Infinite Marquee — renders 2 copies so -50% seamlessly loops */}
+            <div className="absolute inset-0 flex justify-center w-full px-3 md:px-6 overflow-hidden">
+              <div className="flex flex-col gap-5 animate-slide-down-continuous hover:[animation-play-state:paused] pt-8 pb-8 w-full">
+                {/* Copy 1 */}
                 {reviews.map((rev) => (
                   <TestimonialCard key={`loop1-${rev.id}`} rev={rev} googleReviewUrl={googleReviewUrl} />
                 ))}
-                {/* Second Loop for seamless scrolling */}
+                {/* Copy 2 — identical, makes the loop seamless */}
                 {reviews.map((rev) => (
                   <TestimonialCard key={`loop2-${rev.id}`} rev={rev} googleReviewUrl={googleReviewUrl} />
                 ))}
               </div>
             </div>
 
-            {/* Bottom Fade-Out Gradient Mask */}
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white via-white/90 to-transparent pointer-events-none z-10" />
+            {/* Bottom Fade Mask */}
+            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none z-10" />
 
           </div>
 
@@ -217,7 +193,6 @@ const TestimonialCard = ({ rev, googleReviewUrl }: { rev: Review; googleReviewUr
       <div>
         {/* Rating Stars and Google Logo */}
         <div className="flex items-center justify-between mb-6 relative z-10">
-          {/* Stars */}
           <div className="flex gap-1">
             {starsArray.map((_, idx) => (
               <Star 
@@ -230,8 +205,6 @@ const TestimonialCard = ({ rev, googleReviewUrl }: { rev: Review; googleReviewUr
               />
             ))}
           </div>
-
-          {/* Sharp Vector Google Logo */}
           <div className="flex items-center px-3 py-1.5 rounded-full border border-slate-200 bg-white shadow-sm">
             <svg className="h-[14px] w-[14px] mr-1.5 flex-shrink-0" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.58c-.28 1.48-1.12 2.74-2.38 3.58v2.98h3.84c2.25-2.07 3.7-5.12 3.7-8.41z"/>
@@ -239,9 +212,7 @@ const TestimonialCard = ({ rev, googleReviewUrl }: { rev: Review; googleReviewUr
               <path fill="#FBBC05" d="M5.24 14.26c-.25-.72-.39-1.5-.39-2.3s.14-1.58.39-2.3V6.58H1.4C.51 8.2.01 10.04.01 12s.5 3.8 1.39 5.42l3.84-3.16z"/>
               <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.93 1.19 15.22 0 12 0 7.38 0 3.37 3.7 1.4 5.62l3.84 3.08c.95-2.88 3.61-5.01 6.76-5.01z"/>
             </svg>
-            <span className="text-[10px] font-black text-slate-500 tracking-wider">
-              GOOGLE
-            </span>
+            <span className="text-[10px] font-black text-slate-500 tracking-wider">GOOGLE</span>
           </div>
         </div>
 
@@ -254,24 +225,25 @@ const TestimonialCard = ({ rev, googleReviewUrl }: { rev: Review; googleReviewUr
       {/* Profile and Google Review Arrow Trigger */}
       <div className="flex justify-between items-center border-t border-slate-200 pt-5 relative z-10">
         <div className="flex items-center gap-4">
-          <img 
-            src={rev.avatar} 
-            alt={rev.name} 
-            className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm"
-          />
+          {/* Google-style initial avatar */}
+          <div
+            className="w-12 h-12 rounded-full flex items-center justify-center border-2 border-white shadow-sm shrink-0 select-none"
+            style={{ backgroundColor: rev.avatarColor }}
+          >
+            <span className="text-white font-bold text-sm tracking-wide">{rev.initials}</span>
+          </div>
           <div className="text-left">
             <span className="block text-[15px] font-black text-slate-900 leading-tight">{rev.name}</span>
             <span className="block text-[10px] font-bold tracking-widest text-slate-400 mt-1">{rev.role}</span>
           </div>
         </div>
 
-        {/* Floating circular up-right arrow button */}
         <a 
           href={googleReviewUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="w-10 h-10 rounded-full flex items-center justify-center bg-white text-slate-400 hover:text-blue-600 hover:bg-blue-50 border border-slate-200 transition-all active:scale-95 shadow-sm"
-          title="Write Google Maps Review"
+          title="Write a Google Review"
         >
           <ArrowUpRight className="h-4 w-4" />
         </a>

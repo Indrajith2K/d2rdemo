@@ -6,6 +6,7 @@ import MiddleBanner from "../components/MiddleBanner";
 import StatsBanner from "../components/StatsBanner";
 import Testimonials from "../components/Testimonials";
 import TrendingDestinations from "../components/TrendingDestinations";
+import FeaturedDestinationsCarousels from "../components/FeaturedDestinationsCarousels";
 import FAQ from "../components/FAQ";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
@@ -19,8 +20,8 @@ const Index = () => {
         <Hero />
         <Services />
         <MiddleBanner />
-        <StatsBanner />
         <TrendingDestinations />
+        <FeaturedDestinationsCarousels />
         <Testimonials />
         <FAQ />
         <Contact />

@@ -23,8 +23,6 @@ const Karnataka = () => {
           gradientTo="to-violet-900"
         />
 
-        <WhyChooseSection />
-
         <PackagesGrid
           packages={packages}
           loading={loading}
@@ -38,6 +36,8 @@ const Karnataka = () => {
           buttonGradient="from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
           emptyMessage="Contact us for customized Karnataka tour packages"
         />
+
+        <WhyChooseSection />
       </div>
       <Footer />
       <FloatingContact />

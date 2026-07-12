@@ -7,12 +7,20 @@ import FloatingContact from '../components/FloatingContact';
 
 const InternationalTours = () => {
   const internationalDestinations = [
-    { name: 'Thailand', path: '/destinations/thailand', image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=500' },
-    { name: 'Malaysia', path: '/destinations/malaysia', image: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=500' },
-    { name: 'Singapore', path: '/destinations/singapore', image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=500' },
-    { name: 'Bali', path: '/destinations/bali', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500' },
-    { name: 'United Arab Emirates (Dubai)', path: '/destinations/dubai', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500' },
-    { name: 'Sri Lanka', path: '/destinations/srilanka', image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500' }
+    { name: 'Thailand', path: '/destinations/thailand', image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800' },
+    { name: 'Malaysia', path: '/destinations/malaysia', image: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800' },
+    { name: 'Singapore', path: '/destinations/singapore', image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800' },
+    { name: 'Bali', path: '/destinations/bali', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800' },
+    { name: 'Dubai', path: '/destinations/dubai', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800' },
+    { name: 'Sri Lanka', path: '/destinations/srilanka', image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800' },
+    { name: 'Vietnam', path: '/destinations/vietnam', image: 'https://images.unsplash.com/photo-1528127269322-539801943592?w=800' },
+    { name: 'Cambodia', path: '/destinations/cambodia', image: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=800' },
+    { name: 'Azerbaijan', path: '/destinations/azerbaijan', image: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&auto=format&fit=crop' },
+    { name: 'Maldives', path: '/destinations/maldives', image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800' },
+    { name: 'Seychelles', path: '/destinations/seychelles', image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&auto=format&fit=crop' },
+    { name: 'Japan', path: '/destinations/japan', image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800' },
+    { name: 'Mauritius', path: '/destinations/mauritius', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800' },
+    { name: 'Kazakhstan', path: '/destinations/kazakhstan', image: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800' }
   ];
 
   return (

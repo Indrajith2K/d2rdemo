@@ -23,8 +23,6 @@ const Bali = () => {
           gradientTo="to-cyan-900"
         />
 
-        <WhyChooseSection />
-
         <PackagesGrid
           packages={packages}
           loading={loading}
@@ -38,6 +36,8 @@ const Bali = () => {
           buttonGradient="from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700"
           emptyMessage="Contact us for customized Bali tour packages"
         />
+
+        <WhyChooseSection />
       </div>
       <Footer />
       <FloatingContact />

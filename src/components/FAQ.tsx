@@ -41,19 +41,53 @@ interface FAQProps {
 }
 
 const FAQ = ({ data = faqData, title, subtitle }: FAQProps) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const renderFaqItem = (faq: FAQItem, index: number) => {
+    const isOpen = openIndex === index;
+    return (
+      <div 
+        key={index}
+        className={`bg-white rounded-2xl transition-all duration-300 border ${isOpen ? 'border-blue-200 shadow-lg shadow-blue-900/5' : 'border-slate-100 shadow-sm hover:border-slate-200 hover:shadow-md'}`}
+      >
+        <button
+          onClick={() => toggleAccordion(index)}
+          className="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none"
+        >
+          <span className={`text-lg font-bold pr-4 transition-colors duration-200 ${isOpen ? 'text-blue-700' : 'text-slate-800'}`}>
+            {faq.question}
+          </span>
+          <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ${isOpen ? 'bg-blue-100 text-blue-600 rotate-180' : 'bg-slate-50 text-slate-400'}`}>
+            <ChevronDown className="h-5 w-5" />
+          </div>
+        </button>
+        
+        <div 
+          className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+        >
+          <div className="px-6 pb-6 text-slate-600 leading-relaxed">
+            <div className="pt-2 border-t border-slate-50">
+              {faq.answer}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const midPoint = Math.ceil(data.length / 2);
+
   return (
-    <section className="py-24 bg-slate-50 relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-[600px] h-[600px] bg-blue-100/40 rounded-full blur-3xl opacity-50 pointer-events-none" />
       <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/4 w-[500px] h-[500px] bg-indigo-100/40 rounded-full blur-3xl opacity-50 pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center space-x-2 bg-blue-100/50 text-blue-700 px-4 py-2 rounded-full text-sm font-bold tracking-wide mb-4">
             <HelpCircle className="h-4 w-4" />
@@ -71,39 +105,13 @@ const FAQ = ({ data = faqData, title, subtitle }: FAQProps) => {
           </p>
         </div>
 
-        <div className="space-y-4">
-          {data.map((faq, index) => {
-            const isOpen = openIndex === index;
-            
-            return (
-              <div 
-                key={index}
-                className={`bg-white rounded-2xl transition-all duration-300 border ${isOpen ? 'border-blue-200 shadow-lg shadow-blue-900/5' : 'border-slate-100 shadow-sm hover:border-slate-200 hover:shadow-md'}`}
-              >
-                <button
-                  onClick={() => toggleAccordion(index)}
-                  className="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none"
-                >
-                  <span className={`text-lg font-bold pr-4 transition-colors duration-200 ${isOpen ? 'text-blue-700' : 'text-slate-800'}`}>
-                    {faq.question}
-                  </span>
-                  <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ${isOpen ? 'bg-blue-100 text-blue-600 rotate-180' : 'bg-slate-50 text-slate-400'}`}>
-                    <ChevronDown className="h-5 w-5" />
-                  </div>
-                </button>
-                
-                <div 
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
-                >
-                  <div className="px-6 pb-6 text-slate-600 leading-relaxed">
-                    <div className="pt-2 border-t border-slate-50">
-                      {faq.answer}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-start">
+          <div className="space-y-4">
+            {data.slice(0, midPoint).map((faq, index) => renderFaqItem(faq, index))}
+          </div>
+          <div className="space-y-4">
+            {data.slice(midPoint).map((faq, index) => renderFaqItem(faq, index + midPoint))}
+          </div>
         </div>
 
         <div className="mt-12 text-center bg-white rounded-2xl p-8 border border-slate-100 shadow-xl shadow-slate-200/40">

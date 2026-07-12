@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Clock, ArrowRight, ChevronRight, X } from 'lucide-react';
+import { Clock, ArrowRight, ChevronRight, X, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Package } from '@/hooks/usePackages';
 
@@ -43,25 +43,26 @@ const PackageCard: React.FC<PackageCardProps> = ({
             alt={pkg.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
-          <div className="absolute top-4 left-4">
-            <span className="bg-gradient-to-r from-red-500 to-rose-600 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-md tracking-wider uppercase">
-              🔥 Super Deal
-            </span>
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/80 to-transparent h-24 pointer-events-none"></div>
+
+
         </Link>
 
         <div className="p-5 sm:p-6 flex flex-col flex-grow relative">
-          <div className="flex items-center text-white text-xs sm:text-sm font-medium absolute -top-10 left-5 sm:left-6 z-10 bg-slate-900/60 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 shadow-sm">
-            <Clock className="h-4 w-4 mr-1.5" />
+          <div className="flex items-center text-slate-500 text-xs sm:text-sm font-medium mb-3">
+            <Clock className="h-4 w-4 mr-1.5 text-slate-400" />
             {formatDuration(pkg.duration_days, pkg.duration_nights)}
           </div>
 
           <Link to={packageUrl}>
-            <h3 className={`text-xl sm:text-2xl font-bold text-slate-800 mb-4 line-clamp-2 ${hoverColor} transition-colors duration-300 min-h-[3.5rem] mt-1`}>
+            <h3 className={`text-xl sm:text-2xl font-bold text-slate-800 mb-2 line-clamp-2 ${hoverColor} transition-colors duration-300 min-h-[3.5rem]`}>
               {pkg.name}
             </h3>
           </Link>
+          
+          <div className="flex items-center text-slate-500 text-sm mb-4">
+            <MapPin className="h-4 w-4 mr-1.5 text-slate-400 shrink-0" />
+            <span className="truncate">{pkg.location || pkg.state_or_country}</span>
+          </div>
 
           <div className="flex items-end justify-between mb-6 pb-6 border-b border-gray-100">
             <div>
@@ -73,27 +74,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
             </div>
           </div>
 
-          <div className="flex flex-row gap-2 sm:gap-3 mb-6 mt-auto">
-            <button 
-              onClick={() => setShowQuickFacts(true)}
-              className="flex-1 flex flex-col items-center justify-center p-2.5 sm:p-3 font-medium text-slate-700 bg-slate-50 hover:bg-blue-50 hover:text-blue-700 border border-slate-100 hover:border-blue-200 rounded-xl transition-all duration-200"
-            >
-              <span className="text-lg sm:text-xl mb-1">📋</span>
-              <span className="text-[11px] sm:text-xs font-bold">Quick Facts</span>
-            </button>
-            
-            {pkg.trip_speciality && (
-              <button 
-                onClick={() => setShowSpeciality(true)}
-                className="flex-1 flex flex-col items-center justify-center p-2.5 sm:p-3 font-medium text-slate-700 bg-slate-50 hover:bg-orange-50 hover:text-orange-700 border border-slate-100 hover:border-orange-200 rounded-xl transition-all duration-200"
-              >
-                <span className="text-lg sm:text-xl mb-1">🌟</span>
-                <span className="text-[11px] sm:text-xs font-bold">Speciality</span>
-              </button>
-            )}
-          </div>
-
-          <Link to={packageUrl} className="block">
+          <Link to={packageUrl} className="block mt-auto">
             <button className={`w-full bg-gradient-to-r ${buttonGradient} text-white py-3 sm:py-3.5 rounded-xl font-bold text-sm sm:text-base transition-all duration-300 shadow-md hover:shadow-xl flex items-center justify-center space-x-2 group/btn`}>
               <span>View Details & Book</span>
               <ArrowRight className="h-4 w-4 transform group-hover/btn:translate-x-1 transition-transform" />

@@ -23,8 +23,6 @@ const Meghalaya = () => {
           gradientTo="to-teal-900"
         />
 
-        <WhyChooseSection />
-
         <PackagesGrid
           packages={packages}
           loading={loading}
@@ -38,6 +36,8 @@ const Meghalaya = () => {
           buttonGradient="from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700"
           emptyMessage="Contact us for customized Meghalaya tour packages"
         />
+
+        <WhyChooseSection />
       </div>
       <Footer />
       <FloatingContact />

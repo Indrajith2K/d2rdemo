@@ -23,8 +23,6 @@ const Kashmir = () => {
           gradientTo="to-indigo-900"
         />
 
-        <WhyChooseSection />
-
         <PackagesGrid
           packages={packages}
           loading={loading}
@@ -38,6 +36,8 @@ const Kashmir = () => {
           buttonGradient="from-slate-600 to-blue-600 hover:from-slate-700 hover:to-blue-700"
           emptyMessage="Contact us for customized Kashmir tour packages"
         />
+
+        <WhyChooseSection />
       </div>
       <Footer />
       <FloatingContact />

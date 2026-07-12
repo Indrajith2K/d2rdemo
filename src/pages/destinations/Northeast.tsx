@@ -23,8 +23,6 @@ const Northeast = () => {
           gradientTo="to-emerald-900"
         />
 
-        <WhyChooseSection />
-
         <PackagesGrid
           packages={packages}
           loading={loading}
@@ -38,6 +36,8 @@ const Northeast = () => {
           buttonGradient="from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700"
           emptyMessage="Contact us for customized Gangtok and Darjeeling tour packages"
         />
+
+        <WhyChooseSection />
       </div>
       <Footer />
       <FloatingContact />

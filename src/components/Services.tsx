@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Plane, MapPin, Calendar, DollarSign, FileText } from 'lucide-react';
+import { Plane, MapPin, Calendar, FileText } from 'lucide-react';
 
 interface VoyageService {
   id: string;
@@ -43,93 +43,132 @@ const services: VoyageService[] = [
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDhat5t6T4SS1pguuaDVUw59qizlZbWPYhg-NE2ACDuHGVWTR2ncLtAOy0VkPK3STO6VeLL7eyIn1KQ2ktcsFQEJCUi3MscUn38rJ46v7xTcdEn8or-YJKcRU0F2SUkLn9_FRbnK1eU84KtZ7wRhgvkrbe2ZMKBRzqzD968b43ohfPLcaAX0cXIjdRS9vWRnqoeaIoskdpsd35v6hMUx8DwQ1v2eEKjqFvX0VAWHrOycUE9omAxQuat-WNnJME2nCDbeMFhb38aMBQ",
     description: "Unlock the doors to secluded luxury, handpicked havens, and the finest hospitality across the globe.",
     route: '/book-now'
-  },
-  {
-    id: 'currency',
-    title: "Currency",
-    icon: DollarSign,
-    image: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?q=80&w=2071&auto=format&fit=crop",
-    description: "Seamless financial transitions that ensure your focus remains entirely on the journey ahead.",
-    route: '/live-exchange'
   }
 ];
 
 const Services = () => {
   const navigate = useNavigate();
+  const domestic = services.find(s => s.id === 'domestic')!;
+  const international = services.find(s => s.id === 'international')!;
+  const visa = services.find(s => s.id === 'visa')!;
+  const booking = services.find(s => s.id === 'booking')!;
 
   return (
-    <section className="py-20 md:py-24 bg-[#eef0fa] w-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 md:py-20 bg-white w-full border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-6">
 
-        {/* Header Block */}
-        <div className="mb-12">
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-[#16284b] m-0">
-            The Chapters of Your Journey
-          </h2>
-          <p className="font-sans text-lg md:text-xl text-slate-600 mt-4">
-            Meticulously crafted experiences designed to become your most cherished memories.
-          </p>
+        {/* ── Header row: left title + right CTA ── */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+          <div>
+            {/* Eyebrow label */}
+            <div className="flex items-center gap-2 mb-3">
+              <span className="w-6 h-[2px] bg-amber-500 rounded-full" />
+              <span className="font-sans text-xs font-bold uppercase tracking-[0.18em] text-amber-500">
+                What We Offer
+              </span>
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-[#1a1a1a] leading-tight font-bold">
+              The Chapters of<br className="hidden sm:block" /> Your Journey
+            </h2>
+          </div>
+          <div className="flex flex-col items-start md:items-end gap-1 shrink-0 pb-1">
+            <p className="font-sans text-gray-400 text-sm md:text-base font-light max-w-xs md:text-right">
+              Crafted experiences designed to become your most cherished memories.
+            </p>
+            <Link
+              to="/explore-packages"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#16284b] border-b border-[#16284b]/40 pb-0.5 hover:border-amber-500 hover:text-amber-500 transition-all duration-200 mt-1"
+            >
+              View all packages
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+              </svg>
+            </Link>
+          </div>
         </div>
 
-        {/* Accordion Container */}
-        <div className="flex flex-col md:flex-row h-[500px] sm:h-[600px] md:h-[520px] w-full gap-3 sm:gap-4 lg:gap-6">
+        {/* ─── MOBILE: Accordion (hidden on md+) ─── */}
+        <div className="flex flex-col md:hidden h-[500px] sm:h-[600px] gap-3 sm:gap-4">
           {services.map((service, index) => (
             <div
               key={index}
-              onClick={() => {
-                if (window.innerWidth >= 768) {
-                  navigate(service.route);
-                }
-              }}
-              className="group relative flex-1 hover:flex-[6] md:hover:flex-[4] h-full overflow-hidden rounded-2xl sm:rounded-3xl md:rounded-[2rem] transition-all duration-500 ease-in-out cursor-pointer shadow-md"
+              className="group relative flex-1 hover:flex-[6] overflow-hidden rounded-2xl sm:rounded-3xl transition-all duration-500 ease-in-out cursor-pointer shadow-md"
             >
-              {/* Background Image */}
-              <img
-                src={service.image}
-                alt={service.title}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-
-              {/* Gradient Overlay */}
+              <img src={service.image} alt={service.title} className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a1428]/80 via-transparent to-transparent transition-all duration-500 group-hover:from-[#0a1428]/95 group-hover:via-[#0a1428]/60 group-hover:to-transparent" />
-
-              {/* Mobile Unexpanded Dark Overlay to make text pop */}
-              <div className="absolute inset-0 bg-black/40 opacity-100 group-hover:opacity-0 md:hidden transition-opacity duration-500 z-0 pointer-events-none" />
-
-              {/* Icon Circle */}
-              <div className="absolute left-4 top-1/2 -translate-y-1/2 group-hover:top-4 group-hover:-translate-y-0 md:top-4 md:left-1/2 md:-translate-x-1/2 md:-translate-y-0 md:group-hover:left-6 md:group-hover:translate-x-0 w-10 h-10 md:w-16 md:h-16 rounded-full bg-white flex items-center justify-center z-10 transition-all duration-500 shadow-lg">
-                <service.icon className="h-5 w-5 md:h-6 md:w-6 text-amber-500" />
+              <div className="absolute inset-0 bg-black/40 group-hover:opacity-0 md:hidden transition-opacity duration-500 z-0 pointer-events-none" />
+              {/* Icon */}
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 group-hover:top-4 group-hover:-translate-y-0 w-10 h-10 rounded-full bg-white flex items-center justify-center z-10 transition-all duration-500 shadow-lg">
+                <service.icon className="h-5 w-5 text-amber-500" />
               </div>
-
-              {/* Horizontal Text for Mobile Unexpanded State */}
-              <div className="absolute inset-y-0 left-16 right-4 flex items-center justify-start opacity-100 group-hover:opacity-0 md:hidden transition-opacity duration-500 pointer-events-none z-10">
-                <span className="font-display text-xl font-bold text-white tracking-wide whitespace-nowrap drop-shadow-md pl-2">
-                  {service.title}
-                </span>
+              {/* Collapsed label */}
+              <div className="absolute inset-y-0 left-16 right-4 flex items-center opacity-100 group-hover:opacity-0 md:hidden transition-opacity duration-500 pointer-events-none z-10">
+                <span className="font-display text-xl font-bold text-white tracking-wide drop-shadow-md pl-2">{service.title}</span>
               </div>
-
-              {/* Content */}
-              <div className="absolute bottom-4 md:bottom-6 left-4 md:left-6 right-4 md:right-6 text-white z-10 flex flex-col justify-end pointer-events-none group-hover:pointer-events-auto">
-                <h3 className="font-display text-lg md:text-3xl font-bold mb-0 group-hover:mb-2 md:group-hover:mb-4 transition-all duration-500 drop-shadow-md opacity-0 md:opacity-100 group-hover:opacity-100 whitespace-nowrap overflow-hidden md:whitespace-normal">
-                  {service.title}
-                </h3>
-
-                {/* Description & Button - Hidden completely until hovered */}
+              {/* Expanded content */}
+              <div className="absolute bottom-4 left-4 right-4 text-white z-10 flex flex-col justify-end pointer-events-none group-hover:pointer-events-auto">
+                <h3 className="font-display text-lg font-bold mb-0 group-hover:mb-2 transition-all duration-500 drop-shadow-md opacity-0 group-hover:opacity-100">{service.title}</h3>
                 <div className="max-h-0 opacity-0 group-hover:max-h-[250px] group-hover:opacity-100 overflow-hidden transition-all duration-500 ease-in-out">
-                  <p className="text-white/90 text-xs md:text-sm leading-snug md:leading-relaxed mb-4 font-sans whitespace-normal w-full min-w-[150px]">
-                    {service.description}
-                  </p>
-
-                  <Link
-                    to={service.route}
-                    className="inline-block bg-white text-[#16284b] font-semibold px-4 py-2 md:px-6 md:py-2.5 rounded-md text-xs md:text-sm hover:-translate-y-0.5 transition-transform shadow-md pointer-events-auto"
-                  >
+                  <p className="font-sans text-white/90 text-xs leading-snug mb-4">{service.description}</p>
+                  <Link to={service.route} className="inline-block bg-white text-[#16284b] font-semibold px-4 py-2 rounded-md text-xs hover:-translate-y-0.5 transition-transform shadow-md pointer-events-auto">
                     Explore Tours &rarr;
                   </Link>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* ─── DESKTOP: Premium asymmetric grid (hidden on mobile) ─── */}
+        <div className="hidden md:grid grid-cols-12 gap-5 w-full h-[480px]">
+
+          {/* LEFT: Domestic — tall full-height card */}
+          <div className="col-span-6 relative rounded-[32px] overflow-hidden group cursor-pointer transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_24px_48px_rgba(0,0,0,0.18)]">
+            <Link to={domestic.route} className="absolute inset-0 flex flex-col justify-end">
+              <img src={domestic.image} alt={domestic.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+              <div className="relative z-10 p-6">
+                <h3 className="font-display text-white text-2xl font-bold drop-shadow">
+                  {domestic.title}
+                </h3>
+              </div>
+            </Link>
+          </div>
+
+          {/* RIGHT: stacked column */}
+          <div className="col-span-6 flex flex-col gap-6">
+
+            {/* International — wide top card */}
+            <div className="relative flex-1 rounded-[32px] overflow-hidden group cursor-pointer transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_24px_48px_rgba(0,0,0,0.18)]">
+              <Link to={international.route} className="absolute inset-0 flex flex-col justify-end">
+                <img src={international.image} alt={international.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                <div className="relative z-10 p-5">
+                  <h3 className="font-display text-white text-xl font-bold drop-shadow">
+                    {international.title}
+                  </h3>
+                </div>
+              </Link>
+            </div>
+
+            {/* Visa + Booking — side-by-side bottom row */}
+            <div className="flex gap-6 flex-1">
+              {[visa, booking].map((service) => (
+                <div key={service.id} className="relative flex-1 rounded-[32px] overflow-hidden group cursor-pointer transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_24px_48px_rgba(0,0,0,0.18)]">
+                  <Link to={service.route} className="absolute inset-0 flex flex-col justify-end">
+                    <img src={service.image} alt={service.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                    <div className="relative z-10 p-5">
+                      <h3 className="font-display text-white text-lg font-bold drop-shadow">
+                        {service.title}
+                      </h3>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+
+          </div>
         </div>
 
       </div>
