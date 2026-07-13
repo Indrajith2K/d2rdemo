@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
-import MiddleBanner from "../components/MiddleBanner";
 import StatsBanner from "../components/StatsBanner";
 import Testimonials from "../components/Testimonials";
 import TrendingDestinations from "../components/TrendingDestinations";
@@ -19,12 +18,11 @@ const Index = () => {
       <div className="pt-16 md:pt-0">
         <Hero />
         <Services />
-        <MiddleBanner />
         <TrendingDestinations />
         <FeaturedDestinationsCarousels />
         <Testimonials />
-        <FAQ />
         <Contact />
+        <FAQ />
         <Footer />
       </div>
       <FloatingContact />

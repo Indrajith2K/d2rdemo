@@ -83,6 +83,96 @@ const defaultReviews: Review[] = [
     text: "They assisted me properly with my trip. Every thing was properly pre-planned and executed properly. Worth the wait for my trip.",
     avatarColor: "#607D8B",
     initials: "IK"
+  },
+  {
+    id: 9,
+    name: "Keerthana Chandrasekar",
+    role: "GOOGLE REVIEW • 2 MONTHS AGO",
+    rating: 5,
+    text: "The trip service was honestly such a delightful experience! Everything felt so smooth and well-organized, from the booking process to the actual journey. They were super friendly and made sure we were comfortable at every step, which made the whole trip feel extra special. It wasn’t just about reaching the destination—it was about enjoying every little moment along the way. Definitely one of those experiences that leaves you smiling even after it’s over .",
+    avatarColor: "#E91E63",
+    initials: "KC"
+  },
+  {
+    id: 10,
+    name: "mohammed hathim",
+    role: "GOOGLE REVIEW • 6 MONTHS AGO",
+    rating: 5,
+    text: "Best trip planner so far we went as a group 💥💥👹",
+    avatarColor: "#3F51B5",
+    initials: "MH"
+  },
+  {
+    id: 11,
+    name: "Sarika T",
+    role: "GOOGLE REVIEW • 2 MONTHS AGO",
+    rating: 5,
+    text: "Had an amazing trip to Gokarna with D2R Dare2Roam Holidays. Everything was perfectly organized, and we really enjoyed the whole experience. The guide(Bala Bro) was super friendly and helpful, which made the trip even more fun. Would definitely recommend!",
+    avatarColor: "#009688",
+    initials: "ST"
+  },
+  {
+    id: 12,
+    name: "vajjala vishwak narayan",
+    role: "GOOGLE REVIEW • 6 MONTHS AGO",
+    rating: 5,
+    text: "I had a really great experience in this trip. The planning was well organized, the itinerary was smooth, and everything was managed on time. The team was friendly, supportive, and made sure the trip was enjoyable and stress-free. Overall, it was a memorable journey and I would definitely recommend them to others. 😊",
+    avatarColor: "#8BC34A",
+    initials: "VV"
+  },
+  {
+    id: 13,
+    name: "iva Ranjani",
+    role: "GOOGLE REVIEW • 2 MONTHS AGO",
+    rating: 5,
+    text: "Had a very good trip with friends. They organized our trip very good and we made a lot of good memories.",
+    avatarColor: "#FFC107",
+    initials: "IR"
+  },
+  {
+    id: 14,
+    name: "Iyyappan lovely",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "The trip experience was amazing. well co-ordination Mr.Bala. All arrangements like hotel and car and itinerary was superb. My family was so happy. Jeep Safari in Gir was amazing. Overall good.Thanks to D2RHolidays",
+    avatarColor: "#FF9800",
+    initials: "IL"
+  },
+  {
+    id: 15,
+    name: "sanjeeth",
+    role: "GOOGLE REVIEW • 6 MONTHS AGO",
+    rating: 5,
+    text: "The trip turned out to be a wonderful experience and a memorable adventure for our entire group. The guide was very kind, cooperative, and made us feel comfortable at all times. Truly worth every penny",
+    avatarColor: "#795548",
+    initials: "S"
+  },
+  {
+    id: 16,
+    name: "Mona",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "Well planned trip with friendly team and good food",
+    avatarColor: "#673AB7",
+    initials: "M"
+  },
+  {
+    id: 17,
+    name: "Santhosh A",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "The best agency. D2r agency took care of everything from start to end and provided us a very good experience.Loved it!!",
+    avatarColor: "#F44336",
+    initials: "SA"
+  },
+  {
+    id: 18,
+    name: "kishor Official",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "Good Travel...✨",
+    avatarColor: "#4285F4",
+    initials: "KO"
   }
 ];
 
@@ -127,23 +217,22 @@ const Testimonials = () => {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent pointer-events-none" />
-              
-              {/* Huge '1K+' label in bottom-right */}
-              <div className="absolute bottom-6 right-6 text-white text-right">
-                <span className="block text-5xl font-black tracking-tighter leading-none font-sans drop-shadow-lg">
-                  1,000+
+              <div className="absolute bottom-6 right-6 text-white text-right max-w-[240px]">
+                <span className="block text-3xl font-black tracking-tight leading-tight font-sans drop-shadow-lg">
+                  Loved by Travelers
                 </span>
                 <span className="text-[10px] font-bold uppercase tracking-widest text-white/90 block mt-2 drop-shadow-md font-sans">
                   5-Star Reviews
                 </span>
               </div>
 
+              
               {/* Floating Google badge */}
               <div className="absolute top-4 left-4 bg-white/90 backdrop-blur rounded-2xl px-4 py-2 shadow-lg flex items-center gap-2">
                 <span className="text-xl">⭐</span>
                 <div>
                   <span className="block text-[10px] font-bold text-slate-500 uppercase">Google Rating</span>
-                  <span className="block text-sm font-black text-slate-900">4.9/5.0</span>
+                  <span className="block text-sm font-black text-slate-900">5.0/5.0</span>
                 </div>
               </div>
             </div>

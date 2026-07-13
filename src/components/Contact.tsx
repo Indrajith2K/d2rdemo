@@ -96,94 +96,33 @@ const Contact = () => {
   ];
 
   return (
-    <div className="bg-white text-slate-800 relative">
-      
-      {/* ============================================================================
-          PREMIUM REDESIGN: ADVENTURE SHOWCASE
-          ============================================================================ */}
-      <section className="relative pt-16 pb-32 overflow-hidden bg-white select-none">
-        {/* Background ambient glows */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-[64px] opacity-70"></div>
-          <div className="absolute bottom-20 right-10 w-72 h-72 bg-amber-100 rounded-full mix-blend-multiply filter blur-[64px] opacity-70"></div>
-        </div>
-
-        <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="bg-blue-950 rounded-[2.5rem] md:rounded-[3.5rem] relative overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border border-blue-900/50">
-            {/* Textured background overlay */}
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-950/95 via-blue-900/90 to-blue-950/95"></div>
-            
-            {/* Giant watermark text */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none select-none">
-              <span className="text-[18vw] md:text-[14vw] font-black text-white/[0.03] uppercase tracking-[0.2em] font-sans whitespace-nowrap">
-                Adventure
+    <div className="bg-white text-slate-800 relative py-24" id="contact">
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+          
+          {/* LEFT SIDE: Write Your Own Adventure Banner */}
+          <div className="relative h-[500px] lg:h-auto rounded-[2.5rem] md:rounded-[3rem] overflow-hidden group shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] order-2 lg:order-1">
+            <img
+              alt="Vibrant Colorful Travel Background"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpiyJ5V0ktw67uMXqtlUiPQV6xj5pPeJQ7Oh6RS7uH-lL3emh1v8KdOi361PHC-OoWDDDIHXGfM-nt87MNFhR1VFZ5Z1hZ8-hrYSrmXDIv1oZIoTu_8wGcqhnZ8Dl42UMzK215VLl44N2S-dXAAbR_4jtH-Zv17wvfLPaLzoLnEPs4Jd9grcraELHt3v7cskz3NrHM_K5_WYgRocc6yLF1RVA0usFKb-cmjaNncCuaReQDv9dEEQ_VIMkSUdk9V2FJLZt7TGf7af3x"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-10 md:p-14">
+              <span className="text-amber-400 font-bold tracking-[0.2em] uppercase text-xs sm:text-sm mb-4 block flex items-center gap-2">
+                <Sparkles className="w-4 h-4" />
+                Limitless Possibilities
               </span>
-            </div>
-
-            <div className="relative z-10 px-6 pt-16 pb-24 md:pt-24 md:pb-36 flex flex-col items-center">
-              {/* Floating Header */}
-              <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-                <span className="inline-flex items-center justify-center px-4 py-1.5 mb-6 rounded-full bg-white/10 border border-white/10 backdrop-blur-md text-amber-300 text-xs sm:text-sm font-bold tracking-widest uppercase shadow-xl">
-                  <Sparkles className="w-4 h-4 mr-2" />
-                  Premium Getaways
-                </span>
-                <h3 className="font-display text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-white leading-[1.15]">
-                  Explore Destinations <br className="hidden md:block"/>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500">
-                    Across The Globe
-                  </span>
-                </h3>
-                <p className="text-base md:text-lg text-blue-100/80 font-light font-sans leading-relaxed max-w-2xl mx-auto">
-                  Discover your dream destinations with Dare2Roam Holidays. Custom curated trips designed for unforgettable global memories.
-                </p>
-              </div>
-
-              {/* Staggered Premium Image Gallery */}
-              <div className="w-full max-w-6xl mx-auto px-2 md:px-8">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                  {hangingPhotos.map((item, index) => (
-                    <div 
-                      key={item.id} 
-                      className={`group relative rounded-2xl md:rounded-[2rem] overflow-hidden shadow-2xl bg-blue-900/50 border border-white/10 transform transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] hover:border-white/30 ${
-                        index % 2 === 0 ? 'md:translate-y-12' : 'md:-translate-y-4'
-                      }`}
-                    >
-                      {/* Image container with fixed aspect ratio */}
-                      <div className="aspect-[3/4] md:aspect-[4/5] w-full overflow-hidden">
-                        <img 
-                          src={item.img} 
-                          alt={item.label} 
-                          className="w-full h-full object-cover transform scale-[1.03] group-hover:scale-110 transition-transform duration-700 ease-out" 
-                          loading="lazy"
-                        />
-                      </div>
-                      
-                      {/* Gradient overlay for text readability */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      
-                      {/* Content positioned at bottom */}
-                      <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                        <div className="flex items-center gap-2 mb-2">
-                          <MapPin className="w-4 h-4 md:w-5 md:h-5 text-amber-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100" />
-                          <span className="text-white font-bold text-base md:text-xl drop-shadow-md tracking-wide">{item.label}</span>
-                        </div>
-                        <div className="w-8 h-1 md:w-10 md:h-1.5 bg-amber-400 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-150"></div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <h2 className="font-display text-4xl lg:text-5xl text-white mb-5 leading-[1.15] font-black drop-shadow-md">
+                Write Your Own <br />Adventure
+              </h2>
+              <p className="font-sans text-white/80 text-base md:text-lg font-light max-w-md leading-relaxed">
+                Don't see exactly what you're looking for? Let's collaborate to build a bespoke itinerary that reflects your unique spirit of discovery.
+              </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* ============================================================================
-          BOOK NOW FORM CONTAINER
-          ============================================================================ */}
-      <section className="py-20 bg-white relative z-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+          {/* RIGHT SIDE: The Form Container */}
+          <div className="bg-white rounded-[2.5rem] md:rounded-[3rem] shadow-2xl border border-slate-100 p-8 md:p-12 relative z-20 order-1 lg:order-2 flex flex-col justify-center">
           {/* Progress Bar */}
           <div className="mb-12">
             <div className="flex items-center justify-center space-x-8">
@@ -540,8 +479,8 @@ const Contact = () => {
             )}
           </div>
         </div>
-      </section>
-
+      </div>
+    </div>
     </div>
   );
 };
