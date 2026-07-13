@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { usePackageBySlug } from '../hooks/usePackageBySlug';
+import { usePackages } from '../hooks/usePackages';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Clock, MapPin, Check, ArrowLeft, Phone, MessageCircle } from 'lucide-react';
@@ -296,8 +297,57 @@ const PackageDetail = () => {
         </div>
       </section>
 
+      {pkg.state_or_country && (
+        <SuggestedPackages stateOrCountry={pkg.state_or_country} currentPackageId={pkg.id} />
+      )}
+
       <Footer />
     </div>
+  );
+};
+
+const SuggestedPackages = ({ stateOrCountry, currentPackageId }: { stateOrCountry: string, currentPackageId: string }) => {
+  const { packages, loading } = usePackages({ stateOrCountry });
+  const similar = packages.filter(p => p.id !== currentPackageId).slice(0, 3); // show up to 3
+
+  if (loading || similar.length === 0) return null;
+
+  return (
+    <section className="py-16 bg-white border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-black text-slate-800 mb-8 font-playfair">
+          Suggested Packages in {stateOrCountry}
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {similar.map((p) => (
+            <div key={p.id} className="bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition-all group flex flex-col h-full">
+              <div className="relative h-48 overflow-hidden flex-shrink-0">
+                <img 
+                  src={p.image_url || "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"} 
+                  alt={p.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur text-slate-800 px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center">
+                  <MapPin className="h-3 w-3 mr-1" />
+                  {p.location}
+                </div>
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="font-playfair text-xl font-bold text-slate-900 mb-4 line-clamp-2">{p.name}</h3>
+                <div className="mt-auto">
+                  <Link 
+                    to={`/packages/${p.slug || p.id}`}
+                    className="inline-block w-full text-center bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-3 px-4 rounded-xl transition-colors"
+                  >
+                    View Details
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

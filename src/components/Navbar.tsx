@@ -20,7 +20,7 @@ const Navbar = () => {
 
   const domesticItems = [
     { name: 'Kerala', href: '/destinations/kerala' },
-    { name: 'Tamil Nadu', href: '/destinations/tamil-nadu' },
+    // { name: 'Tamil Nadu', href: '/destinations/tamil-nadu' },
     { name: 'Karnataka', href: '/destinations/karnataka' },
     { name: 'Goa', href: '/destinations/goa' },
     { name: 'Hyderabad', href: '/destinations/hyderabad' },

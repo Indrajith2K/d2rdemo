@@ -149,11 +149,11 @@ const FeaturedDestinationsCarousels = () => {
                             </div>
 
                             <div className="border-t border-slate-50 pt-2 mt-auto">
-                              <div className="flex justify-between items-baseline mb-2">
-                                <span className="text-[8px] text-slate-400 font-semibold uppercase tracking-wider block">
+                              <div className="flex flex-col mb-3">
+                                <span className="text-[8px] text-slate-400 font-semibold uppercase tracking-wider mb-0.5">
                                   Starting from
                                 </span>
-                                <span className="text-xs font-black text-slate-900">
+                                <span className="text-xs font-black text-slate-900 leading-none">
                                   {formatPrice(pkg.price_per_person)}
                                 </span>
                               </div>
@@ -225,13 +225,13 @@ const FeaturedDestinationsCarousels = () => {
                         </div>
 
                         <div className="border-t border-slate-50 pt-4 mt-auto">
-                          <div className="flex justify-between items-baseline mb-5">
-                            <span className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider block">
+                          <div className="flex flex-col mb-5">
+                            <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mb-1">
                               Starting from
                             </span>
-                            <span className="text-xl font-black text-slate-900">
+                            <span className="text-xl font-black text-slate-900 leading-none">
                               {formatPrice(pkg.price_per_person)}
-                              <span className="text-[10px] text-slate-400 font-normal ml-0.5">/ traveler</span>
+                              <span className="text-[10px] text-slate-400 font-normal ml-1">/ traveler</span>
                             </span>
                           </div>
 

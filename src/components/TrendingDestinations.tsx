@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Compass } from 'lucide-react';
+import { Compass, ArrowRight } from 'lucide-react';
 
 interface PopularDest {
   id: string;
@@ -19,10 +19,22 @@ const popularDests: PopularDest[] = [
     isTall: true
   },
   {
-    id: 'malaysia',
-    name: 'Malaysia',
-    image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/f9/f2/d8/malaysia.jpg',
-    route: '/destinations/malaysia'
+    id: 'srilanka',
+    name: 'Sri Lanka',
+    image: 'https://wallpapercat.com/w/full/b/b/8/639861-2880x1920-desktop-hd-sri-lanka-background.jpg',
+    route: '/destinations/sri-lanka'
+  },
+  {
+    id: 'maldives',
+    name: 'Maldives',
+    image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80',
+    route: '/destinations/maldives'
+  },
+  {
+    id: 'bali',
+    name: 'Bali',
+    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80',
+    route: '/destinations/bali'
   },
   {
     id: 'thailand',
@@ -46,7 +58,7 @@ const TrendingDestinations = () => {
             THE CANVAS AWAITS
           </span>
           <h2 className="text-4xl sm:text-5xl font-black text-slate-950 leading-tight mb-4 font-sans">
-            Settings For Your Next Chapter
+            Visa Free Countries
           </h2>
           <p className="text-base text-slate-500 font-light font-sans max-w-2xl leading-relaxed">
             Discover handpicked destinations where ancient traditions meet modern luxury—the perfect backdrops for an unforgettable story.
@@ -68,19 +80,22 @@ const TrendingDestinations = () => {
                   alt={tallCard.name}
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none" />
 
-                <div className="p-8 relative z-10">
-                  <h3 className="text-3xl sm:text-4xl font-extrabold font-sans text-white leading-tight drop-shadow-sm">
+                <div className="p-8 relative z-10 h-full flex flex-col justify-end group-hover:pb-12 transition-all duration-300">
+                  <h3 className="text-3xl sm:text-4xl font-extrabold font-sans text-white leading-tight drop-shadow-sm mb-0 group-hover:mb-3 transition-all duration-300">
                     {tallCard.name}
                   </h3>
+                  <div className="absolute bottom-8 left-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-1.5 text-white font-bold text-sm">
+                    Explore <ArrowRight className="h-4 w-4" />
+                  </div>
                 </div>
               </Link>
             )}
           </div>
 
-          {/* Right Column - Malaysia & Thailand Wide Cards (Span 7) */}
-          <div className="md:col-span-7 flex flex-col gap-6">
+          {/* Right Column - (Span 7) */}
+          <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {wideCards.map((dest) => (
               <Link
                 key={dest.id}
@@ -92,12 +107,15 @@ const TrendingDestinations = () => {
                   alt={dest.name}
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none" />
 
-                <div className="p-8 relative z-10">
-                  <h3 className="text-3xl font-extrabold font-sans text-white leading-tight drop-shadow-sm">
+                <div className="p-6 relative z-10 h-full flex flex-col justify-end group-hover:pb-10 transition-all duration-300">
+                  <h3 className="text-2xl font-extrabold font-sans text-white leading-tight drop-shadow-sm mb-0 group-hover:mb-3 transition-all duration-300">
                     {dest.name}
                   </h3>
+                  <div className="absolute bottom-6 left-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-1.5 text-white font-bold text-xs">
+                    Explore <ArrowRight className="h-3 w-3" />
+                  </div>
                 </div>
               </Link>
             ))}
