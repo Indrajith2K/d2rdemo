@@ -9,6 +9,7 @@ import {
   CarouselPrevious,
 } from './ui/carousel';
 import { ArrowRight, Sparkles, MapPin } from 'lucide-react';
+import AutoScroll from 'embla-carousel-auto-scroll';
 
 const FeaturedDestinationsCarousels = () => {
   const { packages: domesticPackages, loading: domesticLoading, error: domesticError } = usePackages({
@@ -81,7 +82,18 @@ const FeaturedDestinationsCarousels = () => {
   ) => {
     if (items.length === 0) return null;
 
-    const chunkedItems = chunkArray(items, 4);
+    let displayItems = [...items];
+    if (displayItems.length > 0 && displayItems.length < 10) {
+      const multiplier = Math.ceil(10 / displayItems.length);
+      displayItems = Array(multiplier).fill(items).flat();
+    }
+    
+    const itemsWithKeys = displayItems.map((item, index) => ({
+      ...item,
+      uniqueKey: `${item.id}-${index}`
+    }));
+
+    const chunkedItems = chunkArray(itemsWithKeys, 4);
 
     return (
       <div className="max-w-[1400px] mx-auto">
@@ -115,6 +127,13 @@ const FeaturedDestinationsCarousels = () => {
               align: 'start',
               loop: true,
             }}
+            plugins={[
+              AutoScroll({
+                speed: 1,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+              }),
+            ]}
             className="w-full"
           >
             <CarouselContent className="-ml-3 pb-4">
@@ -126,7 +145,7 @@ const FeaturedDestinationsCarousels = () => {
                       const displayName = pkg.state_or_country || pkg.location;
 
                       return (
-                        <div key={pkg.id} className="flex flex-col bg-white rounded-2xl border border-slate-105 shadow-[0_4px_15px_rgb(0,0,0,0.02)] overflow-hidden">
+                        <div key={pkg.uniqueKey} className="flex flex-col bg-white rounded-2xl border border-slate-105 shadow-[0_4px_15px_rgb(0,0,0,0.02)] overflow-hidden">
                           {/* Image Block */}
                           <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
                             <img
@@ -186,6 +205,13 @@ const FeaturedDestinationsCarousels = () => {
               align: 'start',
               loop: true,
             }}
+            plugins={[
+              AutoScroll({
+                speed: 1,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+              }),
+            ]}
             className="w-full"
           >
             {/* Nav Arrows inside Desktop Carousel */}
@@ -195,12 +221,12 @@ const FeaturedDestinationsCarousels = () => {
             </div>
 
             <CarouselContent className="-ml-4 pb-4">
-              {items.map((pkg) => {
+              {itemsWithKeys.map((pkg) => {
                 const packageUrl = `/packages/${pkg.slug || pkg.id}`;
                 const displayName = pkg.state_or_country || pkg.location;
 
                 return (
-                  <CarouselItem key={pkg.id} className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+                  <CarouselItem key={pkg.uniqueKey} className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
                     <div className="h-full flex flex-col bg-white rounded-[28px] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_15px_45px_rgb(0,0,0,0.06)] transition-all duration-500 group overflow-hidden">
                       
                       {/* Image Block */}
