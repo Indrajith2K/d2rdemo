@@ -12,6 +12,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '../components/ui/carousel';
+import AutoScroll from 'embla-carousel-auto-scroll';
 
 const PackageDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -308,43 +316,156 @@ const PackageDetail = () => {
 
 const SuggestedPackages = ({ stateOrCountry, currentPackageId }: { stateOrCountry: string, currentPackageId: string }) => {
   const { packages, loading } = usePackages({ stateOrCountry });
-  const similar = packages.filter(p => p.id !== currentPackageId).slice(0, 3); // show up to 3
+  const similar = packages.filter(p => p.id !== currentPackageId);
 
   if (loading || similar.length === 0) return null;
 
+  const chunkArray = (array: any[], size: number) => {
+    const result = [];
+    for (let i = 0; i < array.length; i += size) {
+      result.push(array.slice(i, i + size));
+    }
+    return result;
+  };
+
+  const chunkedSimilar = chunkArray(similar, 4);
+
   return (
-    <section className="py-16 bg-white border-t border-slate-100">
+    <section className="py-16 bg-white border-t border-slate-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-black text-slate-800 mb-8 font-playfair">
           Suggested Packages in {stateOrCountry}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {similar.map((p) => (
-            <div key={p.id} className="bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition-all group flex flex-col h-full">
-              <div className="relative h-48 overflow-hidden flex-shrink-0">
-                <img 
-                  src={p.image_url || "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"} 
-                  alt={p.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur text-slate-800 px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center">
-                  <MapPin className="h-3 w-3 mr-1" />
-                  {p.location}
-                </div>
-              </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="font-playfair text-xl font-bold text-slate-900 mb-4 line-clamp-2">{p.name}</h3>
-                <div className="mt-auto">
-                  <Link 
-                    to={`/packages/${p.slug || p.id}`}
-                    className="inline-block w-full text-center bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-3 px-4 rounded-xl transition-colors"
-                  >
-                    View Details
-                  </Link>
-                </div>
-              </div>
+        
+        {/* Mobile View: 2x2 Grid Carousel */}
+        <div className="block sm:hidden">
+          <Carousel
+            opts={{
+              align: 'start',
+              loop: true,
+            }}
+            plugins={[
+              AutoScroll({
+                speed: 1,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+                startDelay: 0,
+              }),
+            ]}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-3 pb-4">
+              {chunkedSimilar.map((chunk, chunkIdx) => (
+                <CarouselItem key={chunkIdx} className="pl-3 basis-full">
+                  <div className="grid grid-cols-2 gap-3">
+                    {chunk.map((p) => (
+                      <div key={p.id} className="flex flex-col bg-white rounded-2xl border border-slate-105 shadow-[0_4px_15px_rgb(0,0,0,0.02)] overflow-hidden">
+                        <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                          <img
+                            src={p.image_url || "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"}
+                            alt={p.name}
+                            className="w-full h-full object-cover"
+                          />
+                          <span className="absolute top-2 left-2 bg-slate-900/60 backdrop-blur-md text-white text-[8px] font-bold px-2 py-0.5 rounded-full flex items-center gap-0.5 border border-white/10 shadow-sm">
+                            <MapPin className="h-2.5 w-2.5 text-yellow-400" />
+                            {p.location}
+                          </span>
+                        </div>
+                        <div className="p-3 flex-grow flex flex-col justify-between">
+                          <div>
+                            <h4 className="font-sans text-xs font-bold text-slate-800 line-clamp-2 min-h-[2rem] mb-2">
+                              {p.name}
+                            </h4>
+                          </div>
+                          <div className="border-t border-slate-50 pt-2 mt-auto">
+                            <div className="flex flex-col mb-3">
+                              <span className="text-[8px] text-slate-400 font-semibold uppercase tracking-wider mb-0.5">
+                                Starting from
+                              </span>
+                              <span className="text-xs font-black text-slate-900 leading-none">
+                                ₹{p.price_per_person.toLocaleString('en-IN')}
+                              </span>
+                            </div>
+                            <Link to={`/packages/${p.slug || p.id}`} className="block w-full">
+                              <button
+                                type="button"
+                                className="w-full bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white py-1.5 rounded-xl font-bold text-[10px] flex items-center justify-center transition-colors shadow-sm"
+                              >
+                                View Details
+                              </button>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
+
+        {/* Desktop View: 1-item per slide Carousel */}
+        <div className="hidden sm:block">
+          <Carousel
+            opts={{
+              align: 'start',
+              loop: true,
+            }}
+            plugins={[
+              AutoScroll({
+                speed: 1,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+                startDelay: 0,
+              }),
+            ]}
+            className="w-full"
+          >
+            <div className="flex justify-end gap-2.5 z-10 -mt-16 mb-6 pr-4 sm:pr-0">
+              <CarouselPrevious className="relative left-0 right-0 top-0 bottom-0 translate-y-0 h-10 w-10 border-slate-200 bg-white text-slate-700 hover:bg-slate-50 shadow-sm transition-all" />
+              <CarouselNext className="relative left-0 right-0 top-0 bottom-0 translate-y-0 h-10 w-10 border-slate-200 bg-white text-slate-700 hover:bg-slate-50 shadow-sm transition-all" />
             </div>
-          ))}
+            <CarouselContent className="-ml-4 pb-4">
+              {similar.map((p) => (
+                <CarouselItem key={p.id} className="pl-4 basis-[85%] sm:basis-1/2 md:basis-1/3 lg:basis-1/3">
+                  <div className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_15px_45px_rgb(0,0,0,0.06)] border border-slate-100 transition-all group flex flex-col h-full">
+                    <div className="relative aspect-[16/10] overflow-hidden flex-shrink-0 bg-slate-900">
+                      <img 
+                        src={p.image_url || "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"} 
+                        alt={p.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute top-4 left-4 bg-slate-900/60 backdrop-blur-md text-white px-3 py-1.5 rounded-full text-[10px] font-bold shadow-sm flex items-center border border-white/10">
+                        <MapPin className="h-3 w-3 mr-1 text-yellow-400" />
+                        {p.location}
+                      </div>
+                    </div>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <h3 className="font-sans text-lg font-bold text-slate-900 mb-4 line-clamp-2 hover:text-blue-600 transition-colors">{p.name}</h3>
+                      <div className="mt-auto border-t border-slate-50 pt-4">
+                        <div className="flex flex-col mb-5">
+                          <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mb-1">
+                            Starting from
+                          </span>
+                          <span className="text-xl font-black text-slate-900 leading-none">
+                            ₹{p.price_per_person.toLocaleString('en-IN')}
+                            <span className="text-[10px] text-slate-400 font-normal ml-1">/ person</span>
+                          </span>
+                        </div>
+                        <Link 
+                          to={`/packages/${p.slug || p.id}`}
+                          className="inline-flex w-full items-center justify-center gap-2 bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-3 px-4 rounded-xl transition-colors"
+                        >
+                          View Details
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
       </div>
     </section>
