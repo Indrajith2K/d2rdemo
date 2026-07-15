@@ -132,6 +132,7 @@ const FeaturedDestinationsCarousels = () => {
                 speed: 1,
                 stopOnInteraction: false,
                 stopOnMouseEnter: true,
+                startDelay: 0,
               }),
             ]}
             className="w-full"
@@ -210,6 +211,7 @@ const FeaturedDestinationsCarousels = () => {
                 speed: 1,
                 stopOnInteraction: false,
                 stopOnMouseEnter: true,
+                startDelay: 0,
               }),
             ]}
             className="w-full"

@@ -31,8 +31,8 @@ const Navbar = () => {
     { name: 'Meghalaya', href: '/destinations/meghalaya' },
     { name: 'Andaman', href: '/destinations/andaman' },
     { name: 'Lakshadweep', href: '/destinations/lakshadweep' },
-    { name: 'Rajasthan', href: '/destinations/rajasthan' },
-    { name: 'Maharashtra', href: '/destinations/maharashtra' }
+    // { name: 'Rajasthan', href: '/destinations/rajasthan' },
+    // { name: 'Maharashtra', href: '/destinations/maharashtra' }
   ];
 
   const internationalItems = [
@@ -42,14 +42,14 @@ const Navbar = () => {
     { name: 'Bali', href: '/destinations/bali' },
     { name: 'Dubai', href: '/destinations/dubai' },
     { name: 'Sri Lanka', href: '/destinations/srilanka' },
-    { name: 'Vietnam', href: '/destinations/vietnam' },
-    { name: 'Cambodia', href: '/destinations/cambodia' },
-    { name: 'Azerbaijan', href: '/destinations/azerbaijan' },
-    { name: 'Maldives', href: '/destinations/maldives' },
-    { name: 'Seychelles', href: '/destinations/seychelles' },
-    { name: 'Japan', href: '/destinations/japan' },
-    { name: 'Mauritius', href: '/destinations/mauritius' },
-    { name: 'Kazakhstan', href: '/destinations/kazakhstan' }
+    // { name: 'Vietnam', href: '/destinations/vietnam' },
+    // { name: 'Cambodia', href: '/destinations/cambodia' },
+    // { name: 'Azerbaijan', href: '/destinations/azerbaijan' },
+    // { name: 'Maldives', href: '/destinations/maldives' },
+    // { name: 'Seychelles', href: '/destinations/seychelles' },
+    // { name: 'Japan', href: '/destinations/japan' },
+    // { name: 'Mauritius', href: '/destinations/mauritius' },
+    // { name: 'Kazakhstan', href: '/destinations/kazakhstan' }
   ];
 
   const packageItems = [
