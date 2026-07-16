@@ -245,8 +245,8 @@ const Testimonials = () => {
             <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white to-transparent pointer-events-none z-10" />
 
             {/* Infinite Marquee — renders 2 copies so -50% seamlessly loops */}
-            <div className="absolute inset-0 flex justify-center w-full px-3 md:px-6 overflow-hidden">
-              <div className="flex flex-col gap-5 animate-slide-down-continuous hover:[animation-play-state:paused] pt-8 pb-8 w-full">
+            <div className="absolute inset-0 flex justify-center items-start w-full px-3 md:px-6 overflow-hidden">
+              <div className="flex flex-col gap-5 animate-slide-down-continuous hover:[animation-play-state:paused] pt-8 pb-8 w-full h-max">
                 {/* Copy 1 */}
                 {reviews.map((rev) => (
                   <TestimonialCard key={`loop1-${rev.id}`} rev={rev} googleReviewUrl={googleReviewUrl} />
