@@ -12,6 +12,7 @@ interface Review {
 }
 
 const defaultReviews: Review[] = [
+
   {
     id: 1,
     name: "Mathi Sankar",
@@ -174,6 +175,466 @@ const defaultReviews: Review[] = [
     avatarColor: "#4285F4",
     initials: "KO"
   }
+,
+  {
+    id: 19,
+    name: "Srivatsan Palanisamy",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "@d2rholidays,\"A memorable journey filled with fun, adventure, and happiness.\"",
+    avatarColor: "#EA4335",
+    initials: "SP"
+  },
+  {
+    id: 20,
+    name: "Ajaikumar G",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "Exciting trip",
+    avatarColor: "#FBBC05",
+    initials: "AG"
+  },
+  {
+    id: 21,
+    name: "TN BEAST GAMING-27",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "D2R Holidays we'll had a wonderful IV days and we are completely fullfilled with their package and best foods are provided for timings and it'll not disappoint you it's really worth it in each place ✨- Jai Abinav T",
+    avatarColor: "#9C27B0",
+    initials: "TG"
+  },
+  {
+    id: 22,
+    name: "Nithis Karthik",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "Wonderful experience",
+    avatarColor: "#00BCD4",
+    initials: "NK"
+  },
+  {
+    id: 23,
+    name: "SWETHA P",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "A veryy nice experience..loved the trip❤️",
+    avatarColor: "#FF5722",
+    initials: "SP"
+  },
+  {
+    id: 24,
+    name: "SHARAN ESHWAR",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "Wonderful experience",
+    avatarColor: "#607D8B",
+    initials: "SE"
+  },
+  {
+    id: 25,
+    name: "Ragu Sakthivel",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "Organization was awesome",
+    avatarColor: "#E91E63",
+    initials: "RS"
+  },
+  {
+    id: 26,
+    name: "Atchaya K",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "The trip was budget friendly.. And it's worth for the given money.... Dj vibe is very nice..we enjoyed a lot... And the guide was very kind... Gives good experience then we expect... Thank you so much",
+    avatarColor: "#3F51B5",
+    initials: "AK"
+  },
+  {
+    id: 27,
+    name: "Diksa",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "We had a wonderful experience visiting this place. The guide was friendly and helpful, making us feel comfortable throughout our visit. Overall, it was an memorable experience, and we would definitely recommend others to visit.",
+    avatarColor: "#009688",
+    initials: "DI"
+  },
+  {
+    id: 28,
+    name: "A- DANASUSIHA M G",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "We enjoyed lots..superrrrr...❤️💃🏾",
+    avatarColor: "#8BC34A",
+    initials: "AG"
+  },
+  {
+    id: 29,
+    name: "KAVIYA K",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "we enjoyed lotss in the trip❤️nicee",
+    avatarColor: "#FFC107",
+    initials: "KK"
+  },
+  {
+    id: 30,
+    name: "Viviyana Viviyana",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "Good experience..",
+    avatarColor: "#FF9800",
+    initials: "VV"
+  },
+  {
+    id: 31,
+    name: "Kavi Kavi",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "EXCELLENT CUSTOMER SELLING",
+    avatarColor: "#795548",
+    initials: "KK"
+  },
+  {
+    id: 32,
+    name: "Abishek Abishek",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "Excellent customer service",
+    avatarColor: "#673AB7",
+    initials: "AA"
+  },
+  {
+    id: 33,
+    name: "kaleem .k",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "Thank ☺. Bro i am happy",
+    avatarColor: "#F44336",
+    initials: "K."
+  },
+  {
+    id: 34,
+    name: "Suthasri M",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "Good experience",
+    avatarColor: "#4285F4",
+    initials: "SM"
+  },
+  {
+    id: 35,
+    name: "Harshan jothi",
+    role: "GOOGLE REVIEW • 6 MONTHS AGO",
+    rating: 5,
+    text: "Overall a good experience along with D2R.",
+    avatarColor: "#34A853",
+    initials: "HJ"
+  },
+  {
+    id: 36,
+    name: "Kit27.bme39",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "Awesome trip Worth for money ⛰️🎊",
+    avatarColor: "#EA4335",
+    initials: "KI"
+  },
+  {
+    id: 37,
+    name: "Dinesh Kumar",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "This travel agency is one of best travel agency for mee.... Very safe and secure to travel Best memorable and enjoyable travel...",
+    avatarColor: "#FBBC05",
+    initials: "DK"
+  },
+  {
+    id: 38,
+    name: "Perumal M",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "Super guide ,safe ride, good foods ,fully enjoyment and satisfaction 😁",
+    avatarColor: "#9C27B0",
+    initials: "PM"
+  },
+  {
+    id: 39,
+    name: "Harshavardhan Elan",
+    role: "GOOGLE REVIEW • 6 MONTHS AGO",
+    rating: 5,
+    text: "It was a good experience.I do recommend this agency for further plannings.",
+    avatarColor: "#00BCD4",
+    initials: "HE"
+  },
+  {
+    id: 40,
+    name: "Arun Prasadh",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "Hii I am Arun we planned a honeymoon package to Switzerland by D2R holidays the planning and their services was superb their resorts and cab was excellent so I suggest the D2R holidays to everyone, thank you",
+    avatarColor: "#FF5722",
+    initials: "AP"
+  },
+  {
+    id: 41,
+    name: "Rizwana Banu",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "“Enjoyed the trip a lot! Clean places, good service, and a refreshing experience.”",
+    avatarColor: "#607D8B",
+    initials: "RB"
+  },
+  {
+    id: 42,
+    name: "Karthikeyan V",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "We had a great 7-day trip to Bali organized .The agent, quickly answered all our questions. The flights and hotels were all booked perfectly. Our driver, John, was always on time and friendly. Sarah even suggested a quiet beach we loved. Everything went smoothly. Highly recommend!\"",
+    avatarColor: "#E91E63",
+    initials: "KV"
+  },
+  {
+    id: 43,
+    name: "kesavan kutty",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "Super wonderful experience, holidays enjoyment",
+    avatarColor: "#3F51B5",
+    initials: "KK"
+  },
+  {
+    id: 44,
+    name: "Suriya Kcn",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "Best to explore the new place with them.... Good prefer there.. Welfare... And good to visit them to explore... The place.... Try.. To get new exploringe memories 🤍🍃",
+    avatarColor: "#009688",
+    initials: "SK"
+  },
+  {
+    id: 45,
+    name: "BILLA SURESH BILLA SURESH",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "We had absolutely wonderful experience with Dare2roam Good service and quick response Overall we enjoyed the whole trip,it was a memorable trip will definitely use Dare2roam travels service in future.....☺️",
+    avatarColor: "#8BC34A",
+    initials: "BS"
+  },
+  {
+    id: 46,
+    name: "Gowsik E",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "Hii to everyone we are the group of 35 students from coimbatore, we planned an 5 days trip to andhamam island for diwali their services was good and they given us guide too which helps us to coordinate with us , their resort was good they provide us food too thanks to D2R Holidays",
+    avatarColor: "#FFC107",
+    initials: "GE"
+  },
+  {
+    id: 47,
+    name: "Jai Visal",
+    role: "GOOGLE REVIEW • 6 MONTHS AGO",
+    rating: 5,
+    text: "It was a great and amazing experience .2 days was thriller experience",
+    avatarColor: "#FF9800",
+    initials: "JV"
+  },
+  {
+    id: 48,
+    name: "Arun Bharath",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "My kerala trip experience. If you are new or the first time i would recommend you blindly to avail their services. Mr Bala and team were professionally doing his business with good quality services. He guided our itinerary in proper sequence. Must Go with them blindly their cost is less than in the market.Thanks to the team D2RHOLIDAYS.",
+    avatarColor: "#795548",
+    initials: "AB"
+  },
+  {
+    id: 49,
+    name: "L S Roshini",
+    role: "GOOGLE REVIEW • 6 MONTHS AGO",
+    rating: 5,
+    text: "Well organised trip, an amazing experience overall.",
+    avatarColor: "#673AB7",
+    initials: "LR"
+  },
+  {
+    id: 50,
+    name: "Sara Kim",
+    role: "GOOGLE REVIEW • 2 MONTHS AGO",
+    rating: 5,
+    text: "A good and fun journey with friends. Happy with the organization.",
+    avatarColor: "#F44336",
+    initials: "SK"
+  },
+  {
+    id: 51,
+    name: "Pavithra Pavi",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "This is my 2nd holiday booking with D2RHOLIDAYS and my trust in them has also increased 2x now. Everything was flawless right from suggestions, to bookings, to actual holiday experience. More power to the D2RHOLIDAYS team for providing the best always. Special mention of bala is being patient and accomodating all our requests. Breathtaking view of the Munnar Valley from hotel room at Tea Village, Munnar; Sighting Nilgiri Tahr from a very close distance at the Eravikualm National Park; photo sessions at the 2nd mile photo point and tea estates; boat ride at the Vembanad lake (Kumarakom backwaters); Elephant ride and Kathakali show at Thekaddy, amazing local cuisine especially sea food and plenty of photographs. Kerala trip has been amazing for us, better than what we imagined. Thank you team D2HOLIDAYS :)",
+    avatarColor: "#4285F4",
+    initials: "PP"
+  },
+  {
+    id: 52,
+    name: "Dhenesh Dhenesh",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "1. D2R Holidays (Dare2Roam) is one of the most reliable travel agencies in Coimbatore. [1][2] 2. Avanga trips fully well-organised, from travel to stay and sightseeing everything planned neatly. [3][4] 3. Students, friends group, family – ella category-kuvum affordable and value-for-money packages kudukkuraanga. [5][6] 4. Especially college tours and industrial visits arrange pannradula avanga romba experienced. [7][8] 5. Customer service super – calls, WhatsApp, queries ellame quick-a respond panraanga. [2][9] 6. Safety and comfort-ku romba importance kudukkuraanga, cab, rooms, food ellame nalla select panraanga. [3][4] 7. Itinerary flexible-a irukkum, namma preferences and budget-ku adjust panniduvaanga. [5][6] 8. Hidden charges illa, starting-la sollara amount-ku mela later surprise expense varathu. [2] 9. Local sightseeing spots, offbeat places, photo points ellam nalla cover pannuvanga. [3][10] 10. Reviews-la kudha many customers D2R team coordination and care-a romba praise pannirukkaanga. [1][2] 11. Group-la ponaalum, solo-a ponaalum, tension illaama travel panra maari arrangements pannuvanga. [4][6] 12. Trip mood, enjoyment, memories-ku romba focus pannura friendly team. [11][9] 13. Time management nalla irukkum – delay, confusion, miscommunication nu irukkara maari feel aagathu. [1][2] 14. First-time travellers-ku kooda process simple-a, easy-a explain panniduvaanga. [5] 15. Overall-a, safe, budget-friendly, well-planned and enjoyable trips kudukkuraanga, so 5-star rating definitely deserve pannuvaanga. [1][2]",
+    avatarColor: "#34A853",
+    initials: "DD"
+  },
+  {
+    id: 53,
+    name: "Ragavi R",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "Local Guide·6 reviews You made our holiday truly special.From the beginning to the end, the arrangements were smooth and professional. The itinerary was thoughtfully prepared, the hotels provided were comfortable, and the local guides were excellent. What impressed us most was the constant support from the team—they checked in often and ensured we were comfortable. Thank you for giving us a stress-free and memorable travel experience. We will definitely choose your services again.",
+    avatarColor: "#EA4335",
+    initials: "RR"
+  },
+  {
+    id: 54,
+    name: "Riyas Mohamed",
+    role: "GOOGLE REVIEW • 2 MONTHS AGO",
+    rating: 5,
+    text: "Had a great experience thanks to d2r holidays and bala anna ❤️",
+    avatarColor: "#FBBC05",
+    initials: "RM"
+  },
+  {
+    id: 55,
+    name: "Dharshini Senthilkumar",
+    role: "GOOGLE REVIEW • 6 MONTHS AGO",
+    rating: 5,
+    text: "Had a wonderful 1N/2D trip to Varkala and Vagamon with Dare2Roam Holidays. The trip was well organized, the food was very good, and the resort arranged was excellent. Smooth travel and overall a refreshing, enjoyable getaway.",
+    avatarColor: "#9C27B0",
+    initials: "DS"
+  },
+  {
+    id: 56,
+    name: "Arunthathi",
+    role: "GOOGLE REVIEW • 2 MONTHS AGO",
+    rating: 5,
+    text: "Three days trip to dandeli, gokarna was superb their resort and water activities was great and good 😊",
+    avatarColor: "#00BCD4",
+    initials: "AR"
+  },
+  {
+    id: 57,
+    name: "Daksha Lakshmanan",
+    role: "GOOGLE REVIEW • 6 MONTHS AGO",
+    rating: 5,
+    text: "Had a very nice Vagamon–Varkala trip with Dare2Roam Holidays. Everything was well organized, the places were beautiful, and the experience was fun and smooth. Stay, food, and travel were so good. Overall, a great trip and worth it!",
+    avatarColor: "#FF5722",
+    initials: "DL"
+  },
+  {
+    id: 58,
+    name: "COMMON MAN",
+    role: "GOOGLE REVIEW • 2 MONTHS AGO",
+    rating: 5,
+    text: "We are the students of 40 fromsri Krishna college had a tour to north karnataka for 3 days which the tour was awesome, food , resort and bus was superb thanks to d2R holidays",
+    avatarColor: "#607D8B",
+    initials: "CM"
+  },
+  {
+    id: 59,
+    name: "Dharnish_ 3787",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "We planned 5 days package to delhi and manali for group of 7 members, the planning, service, their hotels and their cab driver was good and they provide us 4 star property which was good and well planned package thanks to D2R holidays",
+    avatarColor: "#E91E63",
+    initials: "D3"
+  },
+  {
+    id: 60,
+    name: "Madhan",
+    role: "GOOGLE REVIEW • 7 MONTHS AGO",
+    rating: 5,
+    text: "My trip to Vagamon was wonderfully organised! The itinerary was smooth, the stay and travel arrangements were comfortable, and the organiser handled everything professionally. The sightseeing spots, viewpoints, and activities were well planned, making the trip peaceful and memorable. Highly recommended for a hassle-free travel experience!",
+    avatarColor: "#3F51B5",
+    initials: "MA"
+  },
+  {
+    id: 61,
+    name: "Harshitha V",
+    role: "GOOGLE REVIEW • 6 MONTHS AGO",
+    rating: 5,
+    text: "They delivered more than what was expected and made our holiday truly enjoyable. Everything was well planned, smooth, and stress-free. From bookings to support, the entire experience was seamless. Would definitely recommend them for a hassle-free and memorable vacation.",
+    avatarColor: "#009688",
+    initials: "HV"
+  },
+  {
+    id: 62,
+    name: "Avanthika Hariharan",
+    role: "GOOGLE REVIEW • 6 MONTHS AGO",
+    rating: 5,
+    text: "Excellent planning and execution. The trip followed the schedule perfectly, and both travel and food arrangements were well managed. Very satisfied with the services provided.",
+    avatarColor: "#8BC34A",
+    initials: "AH"
+  },
+  {
+    id: 63,
+    name: "Siva Ragav",
+    role: "GOOGLE REVIEW • 2 MONTHS AGO",
+    rating: 5,
+    text: "Local Guide·3 reviews·1 photo Good experience, food and accommodation are superb and the guide bala anna was awesome 😎💯",
+    avatarColor: "#FFC107",
+    initials: "SR"
+  },
+  {
+    id: 64,
+    name: "Surya Muthu",
+    role: "GOOGLE REVIEW • 2 MONTHS AGO",
+    rating: 5,
+    text: "Wonderful experience ❤️No words to express about the journey 💌 Bala Anna 🫂",
+    avatarColor: "#FF9800",
+    initials: "SM"
+  },
+  {
+    id: 65,
+    name: "Hemachandran Mohandas",
+    role: "GOOGLE REVIEW • EDITED 2 MONTHS AGO",
+    rating: 5,
+    text: "well organized trip ever went! all because of them ❤️🔥 special thanks to our guide bala bro!😎",
+    avatarColor: "#795548",
+    initials: "HM"
+  },
+  {
+    id: 66,
+    name: "Shiva Ranjani",
+    role: "GOOGLE REVIEW • 2 MONTHS AGO",
+    rating: 5,
+    text: "Had a very good trip with friends. They organized our trip very good and we made a lot of good memories.",
+    avatarColor: "#673AB7",
+    initials: "SR"
+  },
+  {
+    id: 67,
+    name: "DIVYA PRABHA.B.B",
+    role: "GOOGLE REVIEW • 6 MONTHS AGO",
+    rating: 5,
+    text: "The bus arrangements, crackers, and cake cutting were very good. The guidelines provided were also clear and helpful. The adventure park and food were nice. We also had access to the swimming pool, and there was a separate property arranged for us. Mr. Bala helped us a lot throughout the trip.Overall, it was a very good experience.",
+    avatarColor: "#F44336",
+    initials: "DP"
+  },
+  {
+    id: 68,
+    name: "THIRU MURUGAN",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "D2R holidays best travel agency,good exposure and light effects ,calm and composed explanation ,friendly vibe ,jeep ride and bus speed is the best experience level ,investing money is worth for it ,food is best but sometimes maybe different due to taste of different places and hotels",
+    avatarColor: "#4285F4",
+    initials: "TM"
+  },
+  {
+    id: 69,
+    name: "Dhanyasakthi S",
+    role: "GOOGLE REVIEW • A WEEK AGO",
+    rating: 5,
+    text: "Really amazing experience. In 2 days we covered more places and I have enjoyed the dj music and jeep safari in our package 😍😍😍🤩🤩",
+    avatarColor: "#34A853",
+    initials: "DS"
+  }
 ];
 
 const Testimonials = () => {
@@ -245,16 +706,20 @@ const Testimonials = () => {
             <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white to-transparent pointer-events-none z-10" />
 
             {/* Infinite Marquee — renders 2 copies so -50% seamlessly loops */}
-            <div className="absolute inset-0 flex justify-center items-start w-full px-3 md:px-6 overflow-hidden">
-              <div className="flex flex-col gap-5 animate-slide-down-continuous hover:[animation-play-state:paused] pt-8 pb-8 w-full h-max">
+            <div className="absolute inset-0 flex justify-center items-start w-full px-3 md:px-6 overflow-hidden pt-8">
+              <div className="flex flex-col animate-slide-down-continuous hover:[animation-play-state:paused] w-full h-max">
                 {/* Copy 1 */}
-                {reviews.map((rev) => (
-                  <TestimonialCard key={`loop1-${rev.id}`} rev={rev} googleReviewUrl={googleReviewUrl} />
-                ))}
+                <div className="flex flex-col gap-5 pb-5">
+                  {reviews.map((rev) => (
+                    <TestimonialCard key={`loop1-${rev.id}`} rev={rev} googleReviewUrl={googleReviewUrl} />
+                  ))}
+                </div>
                 {/* Copy 2 — identical, makes the loop seamless */}
-                {reviews.map((rev) => (
-                  <TestimonialCard key={`loop2-${rev.id}`} rev={rev} googleReviewUrl={googleReviewUrl} />
-                ))}
+                <div className="flex flex-col gap-5 pb-5">
+                  {reviews.map((rev) => (
+                    <TestimonialCard key={`loop2-${rev.id}`} rev={rev} googleReviewUrl={googleReviewUrl} />
+                  ))}
+                </div>
               </div>
             </div>
 
