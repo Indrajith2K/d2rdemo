@@ -14,13 +14,13 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
-    // { name: 'Blogs', href: '/blogs' },
+    { name: 'Blogs', href: '/blogs' },
     // { name: 'Live Exchange', href: '/live-exchange' }
   ];
 
   const domesticItems = [
     { name: 'Kerala', href: '/destinations/kerala' },
-    // { name: 'Tamil Nadu', href: '/destinations/tamil-nadu' },
+    { name: 'Tamil Nadu', href: '/destinations/tamil-nadu' },
     { name: 'Karnataka', href: '/destinations/karnataka' },
     { name: 'Goa', href: '/destinations/goa' },
     { name: 'Hyderabad', href: '/destinations/hyderabad' },
@@ -38,7 +38,7 @@ const Navbar = () => {
   const internationalItems = [
     { name: 'Thailand', href: '/destinations/thailand' },
     { name: 'Malaysia', href: '/destinations/malaysia' },
-    { name: 'Singapore', href: '/destinations/singapore' },
+    { name: 'Mauritius', href: '/destinations/mauritius' },
     { name: 'Bali', href: '/destinations/bali' },
     { name: 'Dubai', href: '/destinations/dubai' },
     { name: 'Sri Lanka', href: '/destinations/srilanka' },

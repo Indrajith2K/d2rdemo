@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
+import { X } from 'lucide-react';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -38,6 +39,8 @@ const images = [
 const uniqueImages = Array.from(new Set(images));
 
 const CardsCarousel = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <section className="py-20 bg-slate-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
@@ -64,23 +67,48 @@ const CardsCarousel = () => {
             slideShadows: true,
           }}
           autoplay={{
-            delay: 3000,
+            delay: 3500,
             disableOnInteraction: false,
           }}
+          speed={1000}
           pagination={{ clickable: true, dynamicBullets: true }}
           modules={[EffectCoverflow, Pagination, Autoplay]}
           className="w-full py-12"
         >
           {uniqueImages.map((img, index) => (
             <SwiperSlide key={index} className="max-w-[280px] sm:max-w-[400px] md:max-w-[500px]">
-              <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[3/4] sm:aspect-[4/5] bg-slate-200">
-                <img src={img} alt={`Travel moment ${index + 1}`} className="w-full h-full object-cover" />
+              <div 
+                className="rounded-3xl overflow-hidden shadow-2xl aspect-[3/4] sm:aspect-[4/5] bg-slate-200 cursor-pointer"
+                onClick={() => setSelectedImage(img)}
+              >
+                <img src={img} alt={`Travel moment ${index + 1}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-      
+
+      {/* Full Screen Image Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 backdrop-blur-sm"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button 
+            className="absolute top-4 right-4 md:top-8 md:right-8 text-white/70 hover:text-white p-2 transition-colors z-10"
+            onClick={() => setSelectedImage(null)}
+          >
+            <X className="h-8 w-8" />
+          </button>
+          <img 
+            src={selectedImage} 
+            alt="Full screen moment" 
+            className="max-w-full max-h-[90vh] object-contain rounded-2xl shadow-2xl animate-in fade-in zoom-in duration-300"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
+
       <style>{`
         .swiper-slide {
           background-position: center;

@@ -323,7 +323,9 @@ const TestimonialCard = ({ rev, googleReviewUrl }: { rev: Review; googleReviewUr
           </div>
           <div className="text-left">
             <span className="block text-[15px] font-black text-slate-900 leading-tight">{rev.name}</span>
-            <span className="block text-[10px] font-bold tracking-widest text-slate-400 mt-1">{rev.role}</span>
+            <span className="block text-[10px] font-bold tracking-widest text-slate-400 mt-1">
+              {rev.role.split(' • ')[0]}
+            </span>
           </div>
         </div>
 

@@ -11,7 +11,7 @@ const DomesticTours = () => {
     { name: 'Tamil Nadu', path: '/destinations/tamil-nadu', image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800' },
     { name: 'Karnataka', path: '/destinations/karnataka', image: 'https://wallpaper.forfun.com/fetch/25/25c01ce5f7cc14e4ceda8a64fc57eb17.jpeg' },
     { name: 'Goa', path: '/destinations/goa', image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800' },
-    { name: 'Hyderabad', path: '/destinations/hyderabad', image: 'https://images.unsplash.com/photo-1513326738677-b964603b136d?w=800' },
+    { name: 'Hyderabad', path: '/destinations/hyderabad', image: 'https://www.citydex.in/images/cities/hyderabad.jpg' },
     { name: 'Delhi - Agra - Jaipur', path: '/destinations/golden-triangle', image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800' },
     { name: 'Himachal Pradesh', path: '/destinations/himachal', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800' },
     { name: 'Kashmir', path: '/destinations/kashmir', image: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800' },

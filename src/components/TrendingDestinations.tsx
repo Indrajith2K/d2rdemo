@@ -12,10 +12,10 @@ interface PopularDest {
 
 const popularDests: PopularDest[] = [
   {
-    id: 'singapore',
-    name: 'Singapore',
-    image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=800&q=80',
-    route: '/destinations/singapore',
+    id: 'mauritius',
+    name: 'Mauritius',
+    image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/71/7e/1f/drone-aerial-views-of.jpg',
+    route: '/destinations/mauritius',
     isTall: true
   },
   {

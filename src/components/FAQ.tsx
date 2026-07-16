@@ -114,7 +114,7 @@ const FAQ = ({ data = faqData, title, subtitle }: FAQProps) => {
           </div>
         </div>
 
-        <div className="mt-12 text-center bg-white rounded-2xl p-8 border border-slate-100 shadow-xl shadow-slate-200/40">
+        <div className="mt-12 text-center bg-white rounded-2xl p-8 border border-slate-100 shadow-xl shadow-slate-200/40 mb-12">
           <h3 className="text-xl font-bold text-slate-800 mb-2">Still have questions?</h3>
           <p className="text-slate-600 mb-6">Our travel experts are ready to help you plan your perfect trip.</p>
           <Link 
@@ -124,6 +124,20 @@ const FAQ = ({ data = faqData, title, subtitle }: FAQProps) => {
             <MessageCircle className="h-5 w-5" />
             <span>Contact Us</span>
           </Link>
+        </div>
+
+        {/* Embedded Location Map */}
+        <div className="w-full h-[400px] sm:h-[450px] rounded-2xl overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100 relative z-20">
+          <iframe
+            title="Our Location"
+            src="https://maps.google.com/maps?q=Dare2Roam%20Holidays&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </section>

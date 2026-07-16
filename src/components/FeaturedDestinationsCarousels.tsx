@@ -129,7 +129,7 @@ const FeaturedDestinationsCarousels = () => {
             }}
             plugins={[
               AutoScroll({
-                speed: 1,
+                speed: 0.25,
                 stopOnInteraction: false,
                 stopOnMouseEnter: true,
                 startDelay: 0,
@@ -208,7 +208,7 @@ const FeaturedDestinationsCarousels = () => {
             }}
             plugins={[
               AutoScroll({
-                speed: 1,
+                speed: 0.5,
                 stopOnInteraction: false,
                 stopOnMouseEnter: true,
                 startDelay: 0,
