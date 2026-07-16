@@ -267,7 +267,11 @@ const PackageDetail = () => {
               )}
 
               {/* Dynamic Wide Pricing Box for Short Content */}
-              {isLeftShort && pricingBox}
+              {isLeftShort && (
+                <div className="hidden lg:block">
+                  {pricingBox}
+                </div>
+              )}
 
             </div>
 
@@ -313,7 +317,9 @@ const PackageDetail = () => {
                 )}
 
                 {/* Pricing Box */}
-                {!isLeftShort && pricingBox}
+                <div className={isLeftShort ? "block lg:hidden" : "block"}>
+                  {pricingBox}
+                </div>
 
               </div>
             </div>
