@@ -22,7 +22,7 @@ const popularDests: PopularDest[] = [
     id: 'srilanka',
     name: 'Sri Lanka',
     image: 'https://wallpapercat.com/w/full/b/b/8/639861-2880x1920-desktop-hd-sri-lanka-background.jpg',
-    route: '/destinations/sri-lanka'
+    route: '/destinations/srilanka'
   },
   {
     id: 'maldives',
