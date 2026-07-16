@@ -8,7 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from './ui/carousel';
-import { ArrowRight, Sparkles, MapPin } from 'lucide-react';
+import { ArrowRight, Sparkles, MapPin, Clock } from 'lucide-react';
 import AutoScroll from 'embla-carousel-auto-scroll';
 
 const FeaturedDestinationsCarousels = () => {
@@ -163,7 +163,11 @@ const FeaturedDestinationsCarousels = () => {
                           {/* Details Block */}
                           <div className="p-3 flex-grow flex flex-col justify-between">
                             <div>
-                              <h4 className="font-sans text-xs font-bold text-slate-800 line-clamp-2 min-h-[2rem] mb-2">
+                              <div className="flex items-center text-slate-500 text-[9px] font-medium mb-1">
+                                <Clock className="h-2.5 w-2.5 mr-1 opacity-70" />
+                                {pkg.duration_days} Days / {pkg.duration_nights} Nights
+                              </div>
+                              <h4 className="font-sans text-xs font-bold text-slate-800 line-clamp-2 min-h-[2.5rem] mb-2">
                                 {pkg.name}
                               </h4>
                             </div>
@@ -247,6 +251,10 @@ const FeaturedDestinationsCarousels = () => {
                       {/* Details Block */}
                       <div className="p-6 flex-grow flex flex-col justify-between">
                         <div>
+                          <div className="flex items-center text-slate-500 text-xs font-medium mb-2">
+                            <Clock className="h-3.5 w-3.5 mr-1.5 opacity-70" />
+                            {pkg.duration_days} Days / {pkg.duration_nights} Nights
+                          </div>
                           <h4 className="font-sans text-lg font-bold text-slate-800 line-clamp-2 min-h-[3.5rem] mb-4 hover:text-blue-600 transition-colors">
                             {pkg.name}
                           </h4>

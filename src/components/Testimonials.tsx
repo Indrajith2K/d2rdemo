@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Star, ArrowUpRight, Quote } from 'lucide-react';
 
 interface Review {
@@ -639,6 +639,51 @@ const defaultReviews: Review[] = [
 
 const Testimonials = () => {
   const [reviews, setReviews] = useState<Review[]>(defaultReviews);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    
+    let animationId: number;
+    let isHovered = false;
+    let isDragging = false;
+    
+    const scroll = () => {
+      if (!isHovered && !isDragging) {
+        el.scrollTop += 0.5;
+        // The first block is exactly half the total scrollHeight
+        // When scrollTop reaches half the scrollHeight, we reset to 0 to loop seamlessly
+        if (el.scrollTop >= el.scrollHeight / 2) {
+          el.scrollTop = 0;
+        }
+      }
+      animationId = requestAnimationFrame(scroll);
+    };
+    
+    animationId = requestAnimationFrame(scroll);
+    
+    const handleMouseEnter = () => isHovered = true;
+    const handleMouseLeave = () => isHovered = false;
+    const handleTouchStart = () => isDragging = true;
+    const handleTouchEnd = () => isDragging = false;
+    
+    el.addEventListener('mouseenter', handleMouseEnter);
+    el.addEventListener('mouseleave', handleMouseLeave);
+    el.addEventListener('touchstart', handleTouchStart);
+    el.addEventListener('touchend', handleTouchEnd);
+    el.addEventListener('touchcancel', handleTouchEnd);
+    
+    return () => {
+      cancelAnimationFrame(animationId);
+      el.removeEventListener('mouseenter', handleMouseEnter);
+      el.removeEventListener('mouseleave', handleMouseLeave);
+      el.removeEventListener('touchstart', handleTouchStart);
+      el.removeEventListener('touchend', handleTouchEnd);
+      el.removeEventListener('touchcancel', handleTouchEnd);
+    };
+  }, []);
+
   const googleReviewUrl = "https://search.google.com/local/writereview?placeid=ChIJKzhygqQzqTsRjO4w1pXkGyo";
 
   // Removed the live API fetch to ensure ONLY the hardcoded authentic reviews are shown
@@ -705,9 +750,12 @@ const Testimonials = () => {
             {/* Top Fade Mask */}
             <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white to-transparent pointer-events-none z-10" />
 
-            {/* Infinite Marquee — renders 2 copies so -50% seamlessly loops */}
-            <div className="absolute inset-0 flex justify-center items-start w-full px-3 md:px-6 overflow-hidden pt-8">
-              <div className="flex flex-col animate-slide-down-continuous hover:[animation-play-state:paused] w-full h-max">
+            {/* Infinite Marquee — renders 2 copies seamlessly looping via JS */}
+            <div 
+              ref={scrollRef}
+              className="absolute inset-0 flex flex-col items-center w-full px-3 md:px-6 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+            >
+              <div className="flex flex-col w-full h-max">
                 {/* Copy 1 */}
                 <div className="flex flex-col gap-5 pb-5">
                   {reviews.map((rev) => (
